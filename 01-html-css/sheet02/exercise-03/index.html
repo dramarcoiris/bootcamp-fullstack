@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+</head>
+<body>
+    <header>
+        <h1>Reserva de plaza en el bootcamp</h1>
+        <p>Rellena el siguiente formulario para poder optar a una plaza en el mejor bootamp de desarrollo web fullstack de Málaga.</p>
+    </header>
+    <main>
+        <fieldset>
+            <legend>Datos personales</legend>
+
+            <label for="name">Nombre de usuario</label>
+            <input id="name" name="name" type="text" required placeholder="Fulanita de tal y pascual"><br><br>
+            
+            <label for="email">Correo electrónico</label>
+            <input id="email" name="email" type="email" required placeholder="correo@example.com">
+        </fieldset>
+        <fieldset>
+            <legend>Modalidad</legend>
+            <input id="presencial" name="modalidad" type="radio">
+            <label for="presencial">Presencial</label><br>
+
+            <input id="remoto" name="modalidad" type="radio">
+            <label for="remoto">Remoto</label><br>
+
+            <input id="hibrido" name="modalidad" type="radio">
+            <label for="hibrido">Hibrido</label>
+        </fieldset>
+    </main>
+</body>
+</html>
