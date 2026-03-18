@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de recursos</title>
+</head>
+<body>
+    <header>
+        <h1>Buscador de recursos</h1>
+    </header>
+    <main>
+        <form method="GET" action="">
+        <p>
+            <label for="keyword">Buscar recursos: </label>
+            <input 
+                 type="search"
+                 id="keyword"
+                 name="keyword"
+                 placeholder="HTML, CSS, JavaScript...">
+        </p>
+        <p>
+            <label for="categoria">Categoría:</label>
+            <select id="categoria" name="categoria">
+                <option value="">Todas las categorías</option>
+                <option value="frontend">Frontend</option>
+                <option value="backend">Backend</option>
+                <option value="fullstack">Fullstack</option>
+                <option value="bases-datos">Bases de datos</option>
+                <option value="devops">DevOps</option>
+            </select>
+        </p>
+        <p>
+            <label for="duracion">Duración máxima</label>
+            <select id="duracion" name="duracion">
+                <option value="">Sin límite</option>
+                <option value="5">Menos de 5 horas</option>
+                <option value="10">Menos de 10 horas</option>
+                <option value="20">Menos de 20 horas</option>
+                <option value="mas20">Más de 20 horas</option>
+            </select>
+        </p>
+        <p>
+            <label for="fecha-inicio">Fecha de inicio</label>
+            <input id="fecha-inicio" name="fecha-inicio" type="date">
+        </p>
+        <p>
+            <input type="checkbox" id="gratis" name="gratis">
+            <label for="gratis">Solo cursos gratuitos</label>
+        </p>
+        <button type="submit">Aplicar filtros</button>
+        </form>
+    </main>
+</body>
+</html>
