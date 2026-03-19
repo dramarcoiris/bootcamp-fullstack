@@ -1,0 +1,16 @@
+body {
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+h1 {
+    color:brown
+}
+p {
+    color:rgb(236, 110, 65)
+}
+.card {
+    background-color:rgb(255, 196, 243);
+    padding: 10% 25% 25% 10%;
+}
+a {
+    color:rgb(127, 201, 15)
+}
