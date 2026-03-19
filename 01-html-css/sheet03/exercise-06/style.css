@@ -1,0 +1,23 @@
+:root {
+    --primary-color: rgb(46, 8, 219);
+    --secondary-color: rgb(243, 69, 49);
+    --background-color: rgb(255, 216, 212);
+    --espaciado-medio: 2rem;
+    --radio-borde: 2rem;
+}
+body{
+    background-color: var(--background-color);
+}
+h1 {
+    color: var(--primary-color)
+}
+p {
+    color:var(--secondary-color)
+}
+dialog{
+    border-radius: var(--radio-borde);
+    color: var(--secondary-color)
+}
+button{
+    padding: var(--espaciado-medio);
+}
