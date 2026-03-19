@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscripción y seguimiento del Bootcamp</title>
+</head>
+<body>
+    <header>
+        <h1>Inscripción y seguimiento del bootcamp</h1>
+        <p>En este ejercicio vamos a realizar un formulario de inscripción, mostraremos una tabla de próximas sesiones, una sección de preguntas frecuentes, además de mostrar el progreso del bootcamp. Finalmente un pie de página con información de contacto.</p>
+    </header>
+    <main>
+        <section>
+            <h2>Formulario de inscripción</h2>
+            <form>
+                <fieldset>
+                    <legend>Datos personales</legend>
+                    <label for="name">Nombre completo:</label>
+                    <input id="name" name="name" type="text" required placeholder="Fulanita de tal"><br><br>
+    
+                    <label for="email">Correo electrónico:</label>
+                    <input id="email" name="email" type="email" required placeholder="correo@correo.com"><br><br>
+                    
+                    <label for="modalidad">Modalidad:</label>
+                    <select id="modalidad" name="modalidad" required>
+                        <option value="">Selecciona una modalidad</option>
+                        <option value="presencial">Presencial</option>
+                        <option value="online">Online</option>
+                    </select><br><br>
+
+                    <label for="intereses">Áreas de interés:</label><br>
+                    <input type="checkbox" id="html-css" name="intereses" value="html-css">
+                    <label for="html-css">HTML y CSS</label><br>
+                    <input type="checkbox" id="javascript" name="intereses" value="javascript">
+                    <label for="javascript">JavaScript</label><br>
+                    <input type="checkbox" id="react" name="intereses" value="react">
+                    <label for="react">React</label><br><br>
+
+                    <label for="motivacion">Motivación:</label><br>
+                    <textarea id="motivacion" name="motivacion" rows="4" cols="50" placeholder="Cuéntanos por qué quieres unirte al bootcamp"></textarea>
+                </fieldset>
+
+                <input id="terms" name="terms" type="checkbox" required>
+                <label for="terms">Acepto las condiciones</label><br><br>
+                <button>Confirmar inscripción</button>
+            </form>
+        </section>
+        <section>
+            <h2>Próximas sesiones</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th scope="col">Fecha</th>
+                        <th scope="col">Hora</th>
+                        <th scope="col">Bloque de aprendizaje</th>
+                        <th scope="col">Estado</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>01/03/2026</td>
+                        <td>09:00 - 14:00</td>
+                        <td>HTML y CSS</td>
+                        <td>Disponible</td>
+                    </tr>
+                    <tr>
+                        <td>13/03/2026</td>
+                        <td>09:00 - 14:00</td>
+                        <td>JavaScript</td>
+                        <td>Plazas limitadas</td>
+                    </tr>
+                    <tr>
+                        <td>03/04/2026</td>
+                        <td>09:00 - 14:00</td>
+                        <td>React</td>
+                        <td>Inscripciones cerradas</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section>
+            <h2>Preguntas frecuentes</h2>
+            <details>
+                <summary>¿Cuánto dura el bootcamp?</summary>
+                <p>El bootcamp tiene una duración de 12 semanas, con sesiones semanales de 5 horas cada una.</p>
+            </details>
+            <details>
+                <summary>¿Es necesario tener conocimientos previos?</summary>
+                <p>No es necesario tener conocimientos previos, el bootcamp está diseñado para personas sin experiencia en programación.</p>
+            </details>
+            <details>
+                <summary>¿Se entrega algún certificado al finalizar?</summary>
+                <p>Sí, al finalizar el bootcamp se entrega un certificado de participación que acredita los conocimientos adquiridos.</p>
+            </details>
+            <details>
+                <summary>¿Necesito un ordenador para participar?</summary>
+                <p>Sí, es necesario tener acceso a un ordenador con conexión a internet para poder seguir las sesiones y realizar los ejercicios.</p>
+            </details>
+        </section>
+        <section>
+            <h2>Progreso actualizado</h2>
+            <label for="progreso">Progreso del bootcamp:</label><br>
+            <progress id="progreso" value="19" max="100">19%</progress><br><br>
+
+            <label for="asistencia">Nivel de asistencia:</label><br>
+            <meter id="asistencia" value="100" min="0" max="100">100%</meter>
+
+        </section>
+
+    </main>
+    <footer>
+        <h2>Información de contacto</h2>
+        <p>Correo electrónico: <a href="mailto:contacto@mail.com">contacto@mail.com</a></p>
+        <p>Teléfono: <a href="tel:+123456789">+123456789</a></p>
+        <p>Web de contacto: <a href="https://www.contacto.com" target="_blank" rel="noopener noreferrer">www.contacto.com</a></p>
+    </footer>
+</body>
+</html>
