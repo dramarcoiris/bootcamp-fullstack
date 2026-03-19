@@ -1,0 +1,15 @@
+h1 {
+    font-size: 3rem;
+}
+
+dialog {
+    background-color: rgb(215, 9, 9);
+    color: white;
+    font-weight: 600;
+    padding: 30% 2px 10% 10%
+}
+
+div {
+    background-color:darksalmon;
+    padding: 30vw 2vh;
+}

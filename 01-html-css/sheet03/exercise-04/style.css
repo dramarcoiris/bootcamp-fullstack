@@ -1,0 +1,17 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+p {
+    color:rgb(33, 185, 185);
+    font-weight: 200;
+    font-weight: 600;
+}
+
+.destacado {
+    color:blueviolet
+}
+
+section p {
+    color:crimson
+}
