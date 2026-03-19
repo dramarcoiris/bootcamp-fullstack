@@ -1,0 +1,7 @@
+h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+}
+
+div {
+    padding: calc(100% - 50%)
+}
