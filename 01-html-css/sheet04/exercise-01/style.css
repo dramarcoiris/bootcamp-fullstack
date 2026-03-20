@@ -1,0 +1,25 @@
+nav a {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: none;
+    color:rgb(232, 82, 27);
+    font-style: italic;
+}
+
+nav > a {
+    font-weight: 700;
+    color:rgb(31, 180, 180);
+    display: flex;
+}
+
+h2+ p {
+    margin-top: 0;
+}
+
+input[required] {
+    color:blueviolet;
+    font-weight: 700;
+}
+
+input[type="email"] {
+    background-color: rgb(234, 179, 39);
+}
