@@ -1,0 +1,16 @@
+li::before {
+    content: "★ "
+}
+
+a::after {
+    content:" ♥";
+}
+
+input::placeholder {
+    color: coral;
+}
+
+p::selection {
+    background-color: rgb(110, 4, 110);
+    color: rgb(244, 66, 244);
+}
