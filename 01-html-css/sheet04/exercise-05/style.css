@@ -1,0 +1,33 @@
+.caja-texto {
+    height: 100px;
+    overflow: auto;
+    border: 3px solid #d14f7a;
+    background-color: #fff6d7;
+    border-radius: 2rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+}
+
+.display span {
+    background-color: slateblue;
+    color: rgb(244 233 250);
+    margin: 5px 5px 10px;
+    padding: 5px;
+}
+
+.display--comparacion span {
+    display: inline-block;
+}
+
+.botones button {
+    margin: 5px;
+}
+
+.botones--comparacion button {
+    display: block;
+    margin: 10px 0;
+}
+
+.oculta {
+    display: none;
+}
