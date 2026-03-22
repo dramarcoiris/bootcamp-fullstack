@@ -1,0 +1,25 @@
+{
+  "name": "bootcamp-fullstack",
+  "version": "1.0.0",
+  "description": "Repositorio de aprendizaje donde desarrollo ejercicios y proyectos realizados durante el Bootcamp Fullstack.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dramarcoiris/bootcamp-fullstack.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/dramarcoiris/bootcamp-fullstack/issues"
+  },
+  "homepage": "https://github.com/dramarcoiris/bootcamp-fullstack#readme",
+  "devDependencies": {
+    "stylelint": "^17.5.0",
+    "stylelint-config-standard": "^40.0.0"
+  }
+}

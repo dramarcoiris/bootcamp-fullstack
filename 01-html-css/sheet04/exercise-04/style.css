@@ -1,0 +1,20 @@
+* {
+    box-sizing: border-box;
+}
+
+.caja {
+    border: 15px solid rgb(251, 140, 109);
+    border-radius: 2rem;
+    width: 400px;
+    padding: 20px;
+    margin: 10px;
+}
+
+.caja--padding {
+    padding: 50px 60px 100px;
+}
+
+.caja--margin {
+    margin: 50px 60px 100px;
+}
+
