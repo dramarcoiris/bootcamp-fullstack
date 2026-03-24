@@ -3,195 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Mundo Pokémon</title>
 </head>
 <body>
     <header>
-        <input id="pokemon-searcher" name="searcher" type="search" placeholder="Filtra pokemons por nombre..." size="50">
+        <input id="pokemon-searcher" name="searcher" type="search" placeholder="Filtra pokemons por nombre...">
     </header>
     <main>
-        <article>
-            <div>
+        <section>
+            <article>
                 <figure>
-                    <img src="../img/bulbasaur.png" alt="Bulbasaur" width="100">
+                    <a href="https://pokemondb.net/pokedex/bulbasaur"><img src="https://img.pokemondb.net/sprites/black-white/anim/normal/bulbasaur.gif" alt="Bulbasaur"></a>
                     <figcaption>ID / 1</figcaption>
-            </figure>
-            </div>
+                </figure>
+                <div>
+                    <h1>Bulbasaur</h1>
+                    <ul class="type">
+                        <li>Poison</li>
+                        <li>Grass</li>
+                    </ul>
+                </div>
+            </article>
 
-            <div>
-                <h1>Bulbasaur</h1>
-                <p>
-                    <span>Poison</span>
-                    <span>Grass</span>
-                </p>
-            </div>
-        </article>
-        
-        <article>
-            <div>
+            <article>
                 <figure>
-                    <img src="../img/ivysaur.png" alt="ivysaur" width="100">
+                    <a href="https://pokemondb.net/pokedex/ivysaur"><img src="https://img.pokemondb.net/sprites/black-white/anim/normal/ivysaur.gif" alt="Ivysaur"></a>
                     <figcaption>ID / 2</figcaption>
                 </figure>
-            </div>
-            
-            <div>
-                <h1>Ivysaur</h1>
-                <p>
-                    <span>Poison</span>
-                    <span>Grass</span>
-                </p>
                 <div>
-                    <p>
-                        Evoluciona de: 
-                        <span>bulbasaur</span>
-                    </p>   
+                    <h1>Ivysaur</h1>
+                    <ul class="type">
+                        <li>Poison</li>
+                        <li>Grass</li>
+                    </ul>
+                    <div class="evolution">
+                        <p>Evoluciona de:</p>
+                        <p class="pokevolution">bulbasaur</p>
+                    </div> 
                 </div>
-            </div>
-        </article>
-
-        <article>
-            <div>
+            </article>
+    
+            <article>
                 <figure>
-                    <img src="../img/venusaur.png" alt="venusaur" width="100">
+                    <a href="https://pokemondb.net/pokedex/venusaur"><img src="https://img.pokemondb.net/sprites/black-white/anim/normal/venusaur-f.gif" alt="Venusaur"></a>
                     <figcaption>ID / 3</figcaption>
                 </figure>
-            </div>
-            
-            <div>
-                <h1>Venusaur</h1>
-                <p>
-                    <span>Poison</span>
-                    <span>Grass</span>
-                </p>
                 <div>
-                    <p>
-                        Evoluciona de: 
-                        <span>ivysaur</span>
-                    </p>   
+                    <h1>Venusaur</h1>
+                    <ul class="type">
+                        <li>Poison</li>
+                        <li>Grass</li>
+                    </ul>
+                    <div class="evolution">
+                        <p>Evoluciona de:</p>
+                        <p>ivysaur</p>
+                    </div>
                 </div>
-            </div>
-        </article>
-        
-        <article>
-            <div>
+            </article>
+            
+            <article>
                 <figure>
-                    <img src="../img/charmander.png" alt="charmander" width="100">
+                    <a href="https://pokemondb.net/pokedex/charmander"><img src="https://img.pokemondb.net/sprites/black-white/anim/normal/charmander.gif" alt="Charmander"></a>
                     <figcaption>ID / 4</figcaption>
                 </figure>
-            </div>
-            
-            <div>
-                <h1>Charmander</h1>
-                <p>
-                    <span>Fire</span>
-                </p>
-            </div>
-        </article>
-        
-        <article>
-            <div>
-                <figure>
-                    <img src="../img/charmeleon.png" alt="charmeleon" width="100">
-                    <figcaption>ID / 5</figcaption>
-                </figure>
-            </div>
-                    
-            <div>
-                <h1>Charmeleon</h1>
-                <p>
-                    <span>Fire</span>
-                </p>
                 <div>
-                    <p>
-                        Evoluciona de: 
-                        <span>charmander</span>
-                    </p>   
+                    <h1>Charmander</h1>
+                    <ul class="type">
+                        <li>Fire</li>
+                    </ul>
                 </div>
-            </div>
-        </article>
-
-        <article>
-            <div>
+            </article>
+            
+            <article>
                 <figure>
-                    <img src="../img/charizard.png" alt="charizard" width="100">
+                    <a href="https://pokemondb.net/pokedex/charmeleon"><img src="https://img.pokemondb.net/sprites/black-white/anim/normal/charmeleon.gif" alt="Charmeleon"></a>
+                    <figcaption>ID / 5</figcaption>
+                </figure>   
+                <div>
+                    <h1>Charmeleon</h1>
+                    <ul class="type">
+                        <li>Fire</li>
+                    </ul>
+                    <div class="evolution">
+                        <p>Evoluciona de:</p>
+                        <p>charmander</p>   
+                    </div>
+                </div>
+            </article>
+    
+            <article>
+                <figure>
+                    <a href="https://pokemondb.net/pokedex/charizard"><img src="https://img.pokemondb.net/sprites/black-white/anim/normal/charizard.gif" alt="Charizard"></a>
                     <figcaption>ID / 6</figcaption>
                 </figure>
-            </div>
-                    
-            <div>
-                <h1>Charizard</h1>
-                <p>
-                    <span>Fire</span>
-                </p>
                 <div>
-                    <p>
-                        Evoluciona de: 
-                        <span>charmeleon</span>
-                    </p>   
+                    <h1>Charizard</h1>
+                    <ul class="type">
+                        <li>Fire</li>
+                    </ul>
+                    <div class="evolution">
+                        <p>Evoluciona de:</p>
+                        <p>charmeleon</p>  
+                    </div>
                 </div>
-            </div>
-        </article>
-        
-        <article>
-            <div>
+            </article>
+            
+            <article>
                 <figure>
-                    <img src="../img/squirtle.png" alt="squirtle" width="100">
+                    <a href="https://pokemondb.net/pokedex/squirtle"><img src="https://img.pokemondb.net/sprites/black-white/anim/normal/squirtle.gif" alt="Squirtle"></a>
                     <figcaption>ID / 7</figcaption>
                 </figure>
-            </div>
-            
-            <div>
-                <h1>Squirtle</h1>
-                <p>
-                    <span>Water</span>
-                </p>
-            </div>
-        </article>
-
-        <article>
-            <div>
+                <div>
+                    <h1>Squirtle</h1>
+                    <ul class="type">
+                        <li>Water</li>
+                    </ul>
+                </div>
+            </article>
+    
+            <article>
                 <figure>
-                    <img src="../img/wartortle.png" alt="wartortle" width="100">
+                    <a href="https://pokemondb.net/pokedex/wartortle"><img src="https://img.pokemondb.net/sprites/black-white/anim/normal/wartortle.gif" alt="Wartortle"></a>
                     <figcaption>ID / 8</figcaption>
-                </figure>
-            </div>
-                    
-            <div>
-                <h1>Wartortle</h1>
-                <p>
-                    <span>Water</span>
-                </p>
+                </figure>   
                 <div>
-                    <p>
-                        Evoluciona de: 
-                        <span>squirtle</span>
-                    </p>   
+                    <h1>Wartortle</h1>
+                    <ul class="type">
+                        <li>Water</li>
+                    </ul>
+                    <div class="evolution">
+                        <p>Evoluciona de:</p>
+                        <p>squirtle</p> 
+                    </div>
                 </div>
-            </div>
-        </article>
-
-        <article>
-            <div>
+            </article>
+    
+            <article>
                 <figure>
-                    <img src="../img/blastoise.png" alt="blastoise" width="100">
+                    <a href="https://pokemondb.net/pokedex/blastoise"><img src="https://img.pokemondb.net/sprites/black-white/anim/normal/blastoise.gif" alt="Blastoise"></a>
                     <figcaption>ID / 9</figcaption>
-                </figure>
-            </div>
-                    
-            <div>
-                <h1>Blastoise</h1>
-                <p>
-                    <span>Water</span>
-                </p>
+                </figure>  
                 <div>
-                    <p>
-                        Evoluciona de: 
-                        <span>wartortle</span>
-                    </p>   
+                    <h1>Blastoise</h1>
+                    <ul class="type">
+                        <li>Water</li>
+                    </ul>
+                    <div class="evolution">
+                        <p>Evoluciona de:</p>
+                        <p>wartortle</p> 
+                    </div>
                 </div>
-            </div>
-        </article>
+            </article>
+        </section>
     </main>
 </body>
 </html>
