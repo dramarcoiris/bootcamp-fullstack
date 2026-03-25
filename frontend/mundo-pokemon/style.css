@@ -1,47 +1,65 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Quicksand:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
+:root {
+    --decoration-top: black;
+    --decoration-botom: #e62828;
+    --color-white: white;
+    --type-poison: rgb(148 15 148);
+    --type-grass: rgb(31 152 16);
+    --type-fire: rgb(240 17 17);
+    --type-flying: rgb(60 224 224);
+    --type-water: rgb(23 52 216);
+}
+
 * {
     box-sizing: content-box;
     margin: 0;
-    padding: 0;
 }
 
 body {
     background-color: #ffe628;
-    font-family: "Ubuntu", sans-serif;
+    font-family: Ubuntu, sans-serif;
+    position: relative;
 }
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+
+main {
+    margin: 0 1rem;
 }
 
 header {
-    margin: 1rem;
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    margin: 1.5rem;
 }
 
 input[type="search"] {
-    padding: 10px;
+    width: 100%;
+    max-width: 775px;
+    padding: 0.75rem;
     background-color: #fffaeb;
     border: none;
     box-shadow: 0 0 13px 0 #1e1e1e46;
 }
 
+input::placeholder {
+    text-align: center;
+}
+
 .container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 3fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 3fr));
     margin: 0 auto;
+    padding-bottom: 2rem;
     max-width: 800px;
     gap: 20px;
     align-content: center;
 }
 
 .ficha-pokemon {
-    background-color: white;
+    background-color: var(--color-white);
     box-shadow: 0 0 13px 0 #1e1e1e46;
+    padding-bottom: 0.25rem;
 }
 
 figure {
@@ -66,16 +84,18 @@ figcaption {
 
 div {
     margin: 0.5rem;
-}
-
-.evolution {
-    border-left: 3px solid #633c23;
+    padding-left: 0.1rem;
 }
 
 h1 {
     font-size: 16pt;
     margin-bottom: 2px;
+    padding-left: 0.25rem;
     color: #1e1e1e;
+}
+
+.type {
+    padding-left: 0.25rem;
 }
 
 li {
@@ -85,6 +105,98 @@ li {
     font-size: 8pt;
     color: #af988b;
     border: 1px solid #bcb2ab;
-    padding: 1px 2px;
+    padding: 1.5px 3px;
     border-radius: 5px;
+}
+
+.evolution {
+    border-left: 3px solid #633c23;
+    padding-left: 0.5rem;
+}
+
+.evolution p {
+    font-size: 10pt;
+    font-weight: 300;
+}
+
+.evolution span {
+    display: block;
+    font-size: 14pt;
+    font-weight: 400;
+}
+
+.box-left {
+    z-index: -1;
+    position: fixed;
+    height: 100px;
+    width: 100px;
+    background-color: var(--decoration-top);
+    transform: rotate(45deg);
+    translate: -60px -60px;
+    top: 0;
+    left: 0;
+}
+
+.box-right {
+    z-index: -1;
+    position: fixed;
+    height: 100px;
+    width: 100px;
+    background-color: var(--decoration-top);
+    transform: rotate(45deg);
+    translate: 60px -60px;
+    top: 0;
+    right: 0;
+}
+
+.circle-left {
+    z-index: -1;
+    position: fixed;
+    height: 100px;
+    width: 100px;
+    background-color: var(--decoration-botom);
+    border-radius: 100px;
+    translate: -60px 60px;
+    bottom: 0;
+    left: 0;
+}
+
+.circle-right {
+    z-index: -1;
+    position: fixed;
+    height: 100px;
+    width: 100px;
+    background-color: var(--decoration-botom);
+    border-radius: 100px;
+    translate: 60px 60px;
+    bottom: 0;
+    right: 0;
+}
+
+.poison:hover {
+    background-color: var(--type-poison);
+    color: var(--color-white);
+}
+
+.grass:hover {
+    background-color: var(--type-grass);
+    color: var(--color-white);
+    transition: background-color 0.5s ease;
+}
+
+.fire:hover {
+    background-color: var(--type-fire);
+    color: var(--color-white);
+    transition: background-color 0.5s ease;
+}
+
+.flying:hover {
+    background-color: var(--type-flying);
+    color: var(--color-white);
+}
+
+.water:hover {
+    background-color: var(--type-water);
+    color: var(--color-white);
+    transition: background-color 0.5s ease;
 }
