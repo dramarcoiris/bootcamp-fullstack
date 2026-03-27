@@ -1,10 +1,11 @@
 # Bootcamp Fullstack
 
-Repositorio de aprendizaje donde desarrollo ejercicios y proyectos realizados durante el Bootcamp Fullstack.  
-
+Repositorio de aprendizaje donde desarrollo ejercicios y proyectos realizados durante el Bootcamp Fullstack.
 El contenido está organizado por bloques tecnológicos y recoge ejercicios prácticos junto con anotaciones relevantes para el proceso de aprendizaje.
 
 ## Contenido
+
+- [GIT](./00-git)
 - [HTML y CSS](./01-html-css)
 - [JavaScript](./02-javascript)
 - [React](./03-react)
@@ -12,16 +13,17 @@ El contenido está organizado por bloques tecnológicos y recoge ejercicios prá
 - [Java](./05-java)
 - [Spring Boot](./06-spring-boot)
 
-## Estructura 
+## Estructura
+
 Dentro de cada bloque, el contenido se divide en hojas de ejercicios y cada ejercicio se desarrolla de forma independiente.
 
 ```text
 bootcamp-fullstack/
+├─ 00-git/              # Fundamentos de GIT y GitHub
 ├─ 01-html-css/         # Ejercicios de HTML y CSS
 |   ├─sheet01/          # Hojas de ejercicios
-|   ├─sheet02/
-|   ├─sheet03/
-|   └─sheet04/
+|   ...
+|   └─notes/            # Recopilatorio de teoría
 |
 ├─ 02-javascript/       # Ejercicios de JavaScript
 ├─ 03-react/            # Ejercicios de React
@@ -33,16 +35,20 @@ bootcamp-fullstack/
 ```
 
 ## Documentación de ejercicios
+
 Los enunciados de cada ejercicio se incluyen dentro de su carpeta correspondiente. Esto permite entender el contexto de cada práctica y los objetivos planteados en cada caso.
 
 ## Metodología de trabajo
+
 El desarrollo se organiza mediante ramas para aislar cada bloque de ejercicios:
+
 - feature/... -> desarrollo de ejercicios
 - main -> versión estable del repositorio
 
-Se busca mantener un historial de cambios claro, reflejando la evolución del aprendizaje. 
+Se busca mantener un historial de cambios claro, reflejando la evolución del aprendizaje.
 
 ## Autora
+
 María Victoria Cejas Benjumea  
 GitHub: ([@Dramarcoiris](https://github.com/dramarcoiris))
 
