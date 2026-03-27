@@ -9,7 +9,7 @@
     --decoration-botom: #e62828;
     --color-white: white;
     --primary-color: #1e1e1e;
-    --primary-color-opacity: #1e1e1e46;
+    --primary-color-opacity: #1e1e1e63;
     --secondary-color: #5c2507;
     --type-poison: rgb(148 15 148);
     --type-grass: rgb(31 152 16);
@@ -24,21 +24,21 @@
 }
 
 body {
-    background-color: var(--background-color);
-    font-family: Ubuntu, sans-serif;
     position: relative;
+    font-family: Ubuntu, sans-serif;
+    background-color: var(--background-color);
 }
 
 .container {
-    max-width: min(1000px, 60%);
     min-width: 200px;
+    max-width: min(1000px, 60%);
     margin: 0 auto;
 }
 
 .pokefilter {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     margin: 1rem 0;
 }
 
@@ -56,11 +56,11 @@ input::placeholder {
 
 .pokegrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 3fr));
-    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 3fr));
     gap: 20px;
     align-content: center;
     padding-bottom: 2rem;
+    margin: 0 auto;
 }
 
 .card {
@@ -75,33 +75,33 @@ input::placeholder {
 
 figure {
     position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     min-height: 8rem;
     background-color: var(--background-image-cards);
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 figcaption {
     position: absolute;
-    left: 0;
     bottom: 0;
-    background-color: var(--background-image-figcaption);
-    color: var(--secondary-color);
+    left: 0;
+    padding: 3px 11px;
     font-size: 10pt;
     font-weight: 500;
-    padding: 3px 11px;
+    color: var(--secondary-color);
+    background-color: var(--background-image-figcaption);
 }
 
 .info-pokemon {
-    margin: 0.5rem;
     padding-left: 0.1rem;
+    margin: 0.5rem;
 }
 
 h1 {
-    font-size: 16pt;
-    margin-bottom: 2px;
     padding: 0.25rem;
+    margin-bottom: 2px;
+    font-size: 16pt;
     color: var(--primary-color);
 }
 
@@ -110,20 +110,20 @@ h1 {
 }
 
 li {
-    list-style: none;
     display: inline-block;
-    text-transform: uppercase;
+    padding: 1.5px 3px;
     font-size: 8pt;
     color: var(--secondary-color);
+    text-transform: uppercase;
+    list-style: none;
     border: 1px solid var(--secondary-color);
-    padding: 1.5px 3px;
     border-radius: 5px;
 }
 
 .evolution {
-    border-left: 3px solid var(--secondary-color);
     padding: 0 0.5rem;
     margin: 0 0.25rem;
+    border-left: 3px solid var(--secondary-color);
 }
 
 .evolution p {
@@ -141,59 +141,59 @@ li {
 /* Decoraciones de fondo */
 
 .box-left {
-    z-index: -1;
     position: fixed;
-    height: 150px;
+    top: 0;
+    left: 0;
+    z-index: -1;
     width: 150px;
+    height: 150px;
     background-color: var(--decoration-top);
     transform: rotate(45deg);
     translate: -75px -75px;
-    top: 0;
-    left: 0;
 }
 
 .box-right {
-    z-index: -1;
     position: fixed;
-    height: 150px;
+    top: 0;
+    right: 0;
+    z-index: -1;
     width: 150px;
+    height: 150px;
     background-color: var(--decoration-top);
     transform: rotate(45deg);
     translate: 75px -75px;
-    top: 0;
-    right: 0;
 }
 
 .circle-left {
-    z-index: -1;
     position: fixed;
-    height: 150px;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
     width: 150px;
+    height: 150px;
     background-color: var(--decoration-botom);
     border-radius: 100px;
     translate: -75px 75px;
-    bottom: 0;
-    left: 0;
 }
 
 .circle-right {
-    z-index: -1;
     position: fixed;
-    height: 150px;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
     width: 150px;
+    height: 150px;
     background-color: var(--decoration-botom);
     border-radius: 100px;
     translate: 75px 75px;
-    bottom: 0;
-    right: 0;
 }
 
 /* Colores para los tipos de los poke */
 .grass:hover {
-    background-color: var(--type-grass);
-    transition: background-color 0.3s ease;
     color: var(--color-white);
+    background-color: var(--type-grass);
     border: none;
+    transition: background-color 0.3s ease;
 }
 
 .grass01:hover {
@@ -205,17 +205,17 @@ li {
 }
 
 .poison:hover {
-    background-color: var(--type-poison);
-    transition: background-color 0.3s ease;
     color: var(--color-white);
+    background-color: var(--type-poison);
     border: none;
+    transition: background-color 0.3s ease;
 }
 
 .fire:hover {
-    background-color: var(--type-fire);
     color: var(--color-white);
-    transition: background-color 0.3s ease;
+    background-color: var(--type-fire);
     border: none;
+    transition: background-color 0.3s ease;
 }
 
 .fire01:hover {
@@ -228,15 +228,15 @@ li {
 }
 
 .flying:hover {
-    background-color: var(--type-flying);
     color: var(--color-white);
-    transition: background-color 0.3s ease;
+    background-color: var(--type-flying);
     border: none;
+    transition: background-color 0.3s ease;
 }
 
 .water:hover {
-    background-color: var(--type-water);
     color: var(--color-white);
-    transition: background-color 0.3s ease;
+    background-color: var(--type-water);
     border: none;
+    transition: background-color 0.3s ease;
 }
