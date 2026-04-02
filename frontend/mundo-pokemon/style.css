@@ -80,7 +80,20 @@ figure {
     justify-content: center;
     min-height: 8rem;
     background-color: var(--background-image-cards);
-    transition: background-color 0.5s ease;
+    overflow: hidden;
+}
+
+figure::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    pointer-events: none;
+}
+
+figure img {
+    position: relative;
 }
 
 figcaption {
@@ -107,11 +120,13 @@ h1 {
 }
 
 .type {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
     padding: 0 0.25rem 0.5rem;
 }
 
 li {
-    display: inline-block;
     padding: 1.5px 3px;
     font-size: 8pt;
     color: var(--secondary-color);
@@ -190,49 +205,62 @@ li {
     translate: 75px 75px;
 }
 
-/* Colores para los tipos de los poke */
-.grass:hover {
-    color: var(--color-white);
-    background-color: var(--type-grass);
-    border: none;
-}
-
-.grass01:hover {
+/* Fondo de los figure */
+figure.grass.poison::before {
     background-image: linear-gradient(
         135deg,
-        var(--type-grass) 60%,
-        transparent 90%
+        var(--type-grass) 40%,
+        var(--type-poison) 60%
     );
 }
 
-.poison:hover {
-    color: var(--color-white);
-    background-color: var(--type-poison);
-    border: none;
-}
-
-.fire:hover {
-    color: var(--color-white);
+figure.fire::before {
     background-color: var(--type-fire);
-    border: none;
 }
 
-.fire01:hover {
+figure.fire.flying::before {
     background-image: linear-gradient(
         135deg,
-        var(--type-fire) 60%,
-        transparent 90%
+        var(--type-fire) 40%,
+        var(--type-flying) 60%
     );
 }
 
-.flying:hover {
-    color: var(--color-white);
-    background-color: var(--type-flying);
-    border: none;
+figure.water::before {
+    background-color: var(--type-water);
 }
 
-.water:hover {
+figure:hover::before {
+    opacity: 1;
+}
+
+/* Color a tipos */
+li.grass:hover {
+    background-color: var(--type-grass);
     color: var(--color-white);
+    border: var(--type-grass);
+}
+
+li.poison:hover {
+    background-color: var(--type-poison);
+    color: var(--color-white);
+    border: var(--type-poison);
+}
+
+li.fire:hover {
+    background-color: var(--type-fire);
+    color: var(--color-white);
+    border: var(--type-fire);
+}
+
+li.flying:hover {
+    background-color: var(--type-flying);
+    color: var(--color-white);
+    border: var(--type-flying);
+}
+
+li.water:hover {
     background-color: var(--type-water);
-    border: none;
+    color: var(--color-white);
+    border: var(--type-water);
 }
