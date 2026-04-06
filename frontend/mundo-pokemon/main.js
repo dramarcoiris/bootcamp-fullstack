@@ -1,3 +1,6 @@
+import { obtenerPokemon } from './pokeapi.js';
+obtenerPokemon().then((data) => console.log(data));
+
 // Datos de los pokemon
 const pokemonData = [
     {
