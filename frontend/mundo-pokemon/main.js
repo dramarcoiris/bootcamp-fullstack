@@ -13,7 +13,8 @@ async function capturarPokemon(id) {
 async function pokemonData() {
     for (let i = 1; i < 151; i++) {
         const pokemon = await capturarPokemon(i);
-        createPokemonCard(pokemon);
+        const card = createPokemonCard(pokemon);
+        container.append(card);
     }
 }
 
