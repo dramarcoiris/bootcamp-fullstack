@@ -1,72 +1,88 @@
-import { obtenerPokemon } from './pokeapi.js';
-obtenerPokemon().then((data) => console.log(data));
+async function capturarPokemon(id) {
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+    const pokedex = await response.json();
+    const pokemon = {
+        id: pokedex.id,
+        nombre: pokedex.name,
+        tipo: pokedex.types.map((t) => t.type.name),
+        img: pokedex.sprites.front_default,
+    };
+    return pokemon;
+}
+
+async function pokemonData() {
+    for (let i = 1; i < 151; i++) {
+        const pokemon = await capturarPokemon(i);
+        createPokemonCard(pokemon);
+    }
+}
 
 // Datos de los pokemon
-const pokemonData = [
-    {
-        id: 1,
-        nombre: 'Bulbasaur',
-        tipo: ['grass', 'poison'],
-        evolucion: null,
-        img: 'https://img.pokemondb.net/sprites/black-white/anim/normal/bulbasaur.gif',
-    },
-    {
-        id: 2,
-        nombre: 'Ivysaur',
-        tipo: ['grass', 'poison'],
-        evolucion: 'bulbasaur',
-        img: 'https://img.pokemondb.net/sprites/black-white/anim/normal/ivysaur.gif',
-    },
-    {
-        id: 3,
-        nombre: 'Venusaur',
-        tipo: ['grass', 'poison'],
-        evolucion: 'ivysaur',
-        img: 'https://img.pokemondb.net/sprites/black-white/anim/normal/venusaur.gif',
-    },
-    {
-        id: 4,
-        nombre: 'Charmander',
-        tipo: ['fire'],
-        evolucion: null,
-        img: 'https://img.pokemondb.net/sprites/black-white/anim/normal/charmander.gif',
-    },
-    {
-        id: 5,
-        nombre: 'Charmeleon',
-        tipo: ['fire'],
-        evolucion: 'charmander',
-        img: 'https://img.pokemondb.net/sprites/black-white/anim/normal/charmeleon.gif',
-    },
-    {
-        id: 6,
-        nombre: 'Charizard',
-        tipo: ['fire', 'flying'],
-        evolucion: 'charmeleon',
-        img: 'https://img.pokemondb.net/sprites/black-white/anim/normal/charizard.gif',
-    },
-    {
-        id: 7,
-        nombre: 'Squirtle',
-        tipo: ['water'],
-        evolucion: null,
-        img: 'https://img.pokemondb.net/sprites/black-white/anim/normal/squirtle.gif',
-    },
-    {
-        id: 8,
-        nombre: 'Wartortle',
-        tipo: ['water'],
-        evolucion: 'squirtle',
-        img: 'https://img.pokemondb.net/sprites/black-white/anim/normal/wartortle.gif',
-    },
-    {
-        id: 9,
-        nombre: 'Blastoise',
-        tipo: ['water'],
-        evolucion: 'wartortle',
-        img: 'https://img.pokemondb.net/sprites/black-white/anim/normal/blastoise.gif',
-    },
-];
+// const pokemonData = [
+//     {
+//         id: 1,
+//         nombre: 'Bulbasaur',
+//         tipo: ['grass', 'poison'],
+//         evolucion: null,
+//         img: 'https://img.pokemondb.net/sprites/black-white/anim/normal/bulbasaur.gif',
+//     },
+//     {
+//         id: 2,
+//         nombre: 'Ivysaur',
+//         tipo: ['grass', 'poison'],
+//         evolucion: 'bulbasaur',
+//         img: 'https://img.pokemondb.net/sprites/black-white/anim/normal/ivysaur.gif',
+//     },
+//     {
+//         id: 3,
+//         nombre: 'Venusaur',
+//         tipo: ['grass', 'poison'],
+//         evolucion: 'ivysaur',
+//         img: 'https://img.pokemondb.net/sprites/black-white/anim/normal/venusaur.gif',
+//     },
+//     {
+//         id: 4,
+//         nombre: 'Charmander',
+//         tipo: ['fire'],
+//         evolucion: null,
+//         img: 'https://img.pokemondb.net/sprites/black-white/anim/normal/charmander.gif',
+//     },
+//     {
+//         id: 5,
+//         nombre: 'Charmeleon',
+//         tipo: ['fire'],
+//         evolucion: 'charmander',
+//         img: 'https://img.pokemondb.net/sprites/black-white/anim/normal/charmeleon.gif',
+//     },
+//     {
+//         id: 6,
+//         nombre: 'Charizard',
+//         tipo: ['fire', 'flying'],
+//         evolucion: 'charmeleon',
+//         img: 'https://img.pokemondb.net/sprites/black-white/anim/normal/charizard.gif',
+//     },
+//     {
+//         id: 7,
+//         nombre: 'Squirtle',
+//         tipo: ['water'],
+//         evolucion: null,
+//         img: 'https://img.pokemondb.net/sprites/black-white/anim/normal/squirtle.gif',
+//     },
+//     {
+//         id: 8,
+//         nombre: 'Wartortle',
+//         tipo: ['water'],
+//         evolucion: 'squirtle',
+//         img: 'https://img.pokemondb.net/sprites/black-white/anim/normal/wartortle.gif',
+//     },
+//     {
+//         id: 9,
+//         nombre: 'Blastoise',
+//         tipo: ['water'],
+//         evolucion: 'wartortle',
+//         img: 'https://img.pokemondb.net/sprites/black-white/anim/normal/blastoise.gif',
+//     },
+// ];
 
 // Selección del contenedor
 const container = document.querySelector('.pokegrid');
@@ -154,9 +170,11 @@ function createPokemonCard(pokemon) {
 }
 
 // Recorre los datos y renderiza cada pokemon en el DOM
-pokemonData.forEach((pokemon) => {
-    const card = createPokemonCard(pokemon);
-    container.append(card);
+// pokemonData.forEach((pokemon) => {
+//     const card = createPokemonCard(pokemon);
+//     container.append(card);
 
-    console.log(pokemon.id, pokemon.nombre, pokemon.tipo, pokemon.evolucion);
-});
+//     console.log(pokemon.id, pokemon.nombre, pokemon.tipo, pokemon.evolucion);
+// });
+
+pokemonData();
