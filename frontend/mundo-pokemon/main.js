@@ -1,104 +1,54 @@
-async function capturarPokemon(id) {
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+// Consulta a la URL + coger datos de la API
+async function capturePokemon(id) {
+    const URL = `https://pokeapi.co/api/v2/pokemon/${id}`;
+    const response = await fetch(URL);
     const pokedex = await response.json();
     const pokemon = {
         id: pokedex.id,
-        nombre: pokedex.name,
+        nombre: pokedex.name.charAt(0).toUpperCase() + pokedex.name.slice(1),
         tipo: pokedex.types.map((t) => t.type.name),
-        img: pokedex.sprites.front_default,
+        img: pokedex.sprites.versions['generation-v']['black-white'].animated.front_default,
     };
     return pokemon;
 }
 
+// Evoluciones
+async function pokeSpecies(id) {
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
+    const data = await response.json();
+    return data.evolves_from_species;
+}
+
+// Recorrer JSON para montar cada poke
 async function pokemonData() {
     for (let i = 1; i < 151; i++) {
-        const pokemon = await capturarPokemon(i);
-        const card = createPokemonCard(pokemon);
+        const pokemon = await capturePokemon(i);
+        const evolvesFrom = await pokeSpecies(i);
+
+        console.log(pokemon.nombre, evolvesFrom);
+
+        // Añadir evolución, si tiene
+        const card = createPokemonCard({
+            ...pokemon,
+            evolucion: evolvesFrom ? evolvesFrom.name : null,
+        });
+
         container.append(card);
     }
 }
 
-// Datos de los pokemon
-// const pokemonData = [
-//     {
-//         id: 1,
-//         nombre: 'Bulbasaur',
-//         tipo: ['grass', 'poison'],
-//         evolucion: null,
-//         img: 'https://img.pokemondb.net/sprites/black-white/anim/normal/bulbasaur.gif',
-//     },
-//     {
-//         id: 2,
-//         nombre: 'Ivysaur',
-//         tipo: ['grass', 'poison'],
-//         evolucion: 'bulbasaur',
-//         img: 'https://img.pokemondb.net/sprites/black-white/anim/normal/ivysaur.gif',
-//     },
-//     {
-//         id: 3,
-//         nombre: 'Venusaur',
-//         tipo: ['grass', 'poison'],
-//         evolucion: 'ivysaur',
-//         img: 'https://img.pokemondb.net/sprites/black-white/anim/normal/venusaur.gif',
-//     },
-//     {
-//         id: 4,
-//         nombre: 'Charmander',
-//         tipo: ['fire'],
-//         evolucion: null,
-//         img: 'https://img.pokemondb.net/sprites/black-white/anim/normal/charmander.gif',
-//     },
-//     {
-//         id: 5,
-//         nombre: 'Charmeleon',
-//         tipo: ['fire'],
-//         evolucion: 'charmander',
-//         img: 'https://img.pokemondb.net/sprites/black-white/anim/normal/charmeleon.gif',
-//     },
-//     {
-//         id: 6,
-//         nombre: 'Charizard',
-//         tipo: ['fire', 'flying'],
-//         evolucion: 'charmeleon',
-//         img: 'https://img.pokemondb.net/sprites/black-white/anim/normal/charizard.gif',
-//     },
-//     {
-//         id: 7,
-//         nombre: 'Squirtle',
-//         tipo: ['water'],
-//         evolucion: null,
-//         img: 'https://img.pokemondb.net/sprites/black-white/anim/normal/squirtle.gif',
-//     },
-//     {
-//         id: 8,
-//         nombre: 'Wartortle',
-//         tipo: ['water'],
-//         evolucion: 'squirtle',
-//         img: 'https://img.pokemondb.net/sprites/black-white/anim/normal/wartortle.gif',
-//     },
-//     {
-//         id: 9,
-//         nombre: 'Blastoise',
-//         tipo: ['water'],
-//         evolucion: 'wartortle',
-//         img: 'https://img.pokemondb.net/sprites/black-white/anim/normal/blastoise.gif',
-//     },
-// ];
-
 // Selección del contenedor
 const container = document.querySelector('.pokegrid');
 
-// Función para crear la tarjeta de un pokemon, devuelve un nodo al DOM
+// Tarjeta de un pokemon
 function createPokemonCard(pokemon) {
-    // Contenedor principal de la tarjeta y clase
+    // Contenedor principal
     const pokemonCard = document.createElement('article');
     pokemonCard.classList.add('card');
 
-    /*** IMAGEN DEL POKEMON ***/
-    // Contenedor para la imagen. Crea la imagen y asocia src y alt
-    const pokeImageCont = document.createElement('figure');
+    /*** IMAGEN ***/
 
-    // Se añade la clase según el tipo que contiene cada contenedor de imagen
+    const pokeImageCont = document.createElement('figure');
     pokemon.tipo.forEach((tipo) => {
         pokeImageCont.classList.add(tipo);
     });
@@ -107,12 +57,10 @@ function createPokemonCard(pokemon) {
     pokeImg.src = pokemon.img;
     pokeImg.alt = pokemon.nombre;
 
-    // Figcaption con el texto para ID
     const pokeID = document.createElement('figcaption');
     pokeID.textContent = `ID / ${pokemon.id}`;
 
-    /*** INFO DEL POKEMON ***/
-    // Div para la info del pokemon y clase asociada
+    /*** INFO ***/
     const bloqueInfoPokemon = document.createElement('div');
     bloqueInfoPokemon.classList.add('info-pokemon');
 
@@ -127,55 +75,40 @@ function createPokemonCard(pokemon) {
     //  Array de tipos en elementos de lista
     pokemon.tipo.forEach((tipo) => {
         const li = document.createElement('li');
-        li.textContent = tipo; // Se recoge el nombre del tipo que contiene
-        li.classList.add(tipo); // Se asigna la clase a cada elemento creado
-        typeList.append(li); // Con append se añaden de forma sucesiva
+        li.textContent = tipo;
+        li.classList.add(tipo);
+        typeList.append(li);
     });
 
     /*** EVOLUCIÓN ***/
     let evolucion = null;
     // Si tienen evolución, se crea el contenedor que añade la info
     if (pokemon.evolucion) {
-        // Se crea el bloque div y se asigna la clase
         evolucion = document.createElement('div');
         evolucion.classList.add('evolution');
 
-        // Se crea el texto y el contenido
         const text = document.createElement('p');
         text.textContent = 'Evoluciona de:';
 
-        // Se crea el span que recoge el nombre del pokemon del que evoluciona
         const span = document.createElement('span');
         span.textContent = pokemon.evolucion;
 
-        // Se añade la info recogida
         text.append(span);
         evolucion.append(text);
     }
 
     /*** CONSTRUCCIÓN DE LA TARJETA ***/
-    // Bloque de imagen con figure e ID en su interior
     pokeImageCont.append(pokeImg, pokeID);
 
-    // Bloque de información con nombre y tipos
     bloqueInfoPokemon.append(pokeName, typeList);
     // Si tiene evolución, se añade también
     if (evolucion) {
         bloqueInfoPokemon.append(evolucion);
     }
 
-    // Luego se une la info de la imagen + info dentro de la card
     pokemonCard.append(pokeImageCont, bloqueInfoPokemon);
-
     return pokemonCard;
 }
 
-// Recorre los datos y renderiza cada pokemon en el DOM
-// pokemonData.forEach((pokemon) => {
-//     const card = createPokemonCard(pokemon);
-//     container.append(card);
-
-//     console.log(pokemon.id, pokemon.nombre, pokemon.tipo, pokemon.evolucion);
-// });
-
+// Llamada a la función
 pokemonData();
