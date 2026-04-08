@@ -1,47 +1,7 @@
-// Consulta a la URL + coger datos de la API
-async function capturePokemon(id) {
-    const URL = `https://pokeapi.co/api/v2/pokemon/${id}`;
-    const response = await fetch(URL);
-    const pokedex = await response.json();
-    const pokemon = {
-        id: pokedex.id,
-        nombre: pokedex.name.charAt(0).toUpperCase() + pokedex.name.slice(1),
-        tipo: pokedex.types.map((t) => t.type.name),
-        img: pokedex.sprites.versions['generation-v']['black-white'].animated.front_default,
-    };
-    return pokemon;
-}
-
-// Evoluciones
-async function pokeSpecies(id) {
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon-species/${id}`);
-    const data = await response.json();
-    return data.evolves_from_species;
-}
-
-// Recorrer JSON para montar cada poke
-async function pokemonData() {
-    for (let i = 1; i < 151; i++) {
-        const pokemon = await capturePokemon(i);
-        const evolvesFrom = await pokeSpecies(i);
-
-        console.log(pokemon.nombre, evolvesFrom);
-
-        // Añadir evolución, si tiene
-        const card = createPokemonCard({
-            ...pokemon,
-            evolucion: evolvesFrom ? evolvesFrom.name : null,
-        });
-
-        container.append(card);
-    }
-}
-
-// Selección del contenedor
-const container = document.querySelector('.pokegrid');
+import { POKEMON_TYPES } from './types.js';
 
 // Tarjeta de un pokemon
-function createPokemonCard(pokemon) {
+export function createPokemonCard(pokemon) {
     // Contenedor principal
     const pokemonCard = document.createElement('article');
     pokemonCard.classList.add('card');
@@ -76,7 +36,20 @@ function createPokemonCard(pokemon) {
     pokemon.tipo.forEach((tipo) => {
         const li = document.createElement('li');
         li.textContent = tipo;
-        li.classList.add(tipo);
+
+        const color = POKEMON_TYPES[tipo];
+        if (color) {
+            li.addEventListener('mouseenter', () => {
+                li.style.backgroundColor = color;
+                li.style.borderColor = color;
+                li.style.color = '#fff';
+            });
+            li.addEventListener('mouseleave', () => {
+                li.style.backgroundColor = 'transparent';
+                li.style.borderColor = '';
+                li.style.color = '';
+            });
+        }
         typeList.append(li);
     });
 
@@ -109,6 +82,3 @@ function createPokemonCard(pokemon) {
     pokemonCard.append(pokeImageCont, bloqueInfoPokemon);
     return pokemonCard;
 }
-
-// Llamada a la función
-pokemonData();
