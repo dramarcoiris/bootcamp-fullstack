@@ -79,17 +79,17 @@ figure {
     align-items: center;
     justify-content: center;
     min-height: 8rem;
-    background-color: var(--background-image-cards);
     overflow: hidden;
+    background-color: var(--background-image-cards);
 }
 
 figure::before {
-    content: '';
     position: absolute;
     inset: 0;
+    pointer-events: none;
+    content: '';
     opacity: 0;
     transition: opacity 0.2s ease;
-    pointer-events: none;
 }
 
 figure img {
@@ -121,8 +121,8 @@ h1 {
 
 .type {
     display: flex;
-    gap: 5px;
     flex-wrap: wrap;
+    gap: 5px;
     padding: 0 0.25rem 0.5rem;
 }
 
@@ -207,11 +207,7 @@ li {
 
 /* Fondo de los figure */
 figure.grass.poison::before {
-    background-image: linear-gradient(
-        135deg,
-        var(--type-grass) 40%,
-        var(--type-poison) 60%
-    );
+    background-image: linear-gradient(135deg, var(--type-grass) 40%, var(--type-poison) 60%);
 }
 
 figure.fire::before {
@@ -219,11 +215,7 @@ figure.fire::before {
 }
 
 figure.fire.flying::before {
-    background-image: linear-gradient(
-        135deg,
-        var(--type-fire) 40%,
-        var(--type-flying) 60%
-    );
+    background-image: linear-gradient(135deg, var(--type-fire) 40%, var(--type-flying) 60%);
 }
 
 figure.water::before {
@@ -236,31 +228,31 @@ figure:hover::before {
 
 /* Color a tipos */
 li.grass:hover {
-    background-color: var(--type-grass);
     color: var(--color-white);
+    background-color: var(--type-grass);
     border: var(--type-grass);
 }
 
 li.poison:hover {
-    background-color: var(--type-poison);
     color: var(--color-white);
+    background-color: var(--type-poison);
     border: var(--type-poison);
 }
 
 li.fire:hover {
-    background-color: var(--type-fire);
     color: var(--color-white);
+    background-color: var(--type-fire);
     border: var(--type-fire);
 }
 
 li.flying:hover {
-    background-color: var(--type-flying);
     color: var(--color-white);
+    background-color: var(--type-flying);
     border: var(--type-flying);
 }
 
 li.water:hover {
-    background-color: var(--type-water);
     color: var(--color-white);
+    background-color: var(--type-water);
     border: var(--type-water);
 }
