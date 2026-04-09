@@ -12,6 +12,7 @@ El contenido está organizado por bloques tecnológicos y recoge ejercicios prá
 - [Bases de Datos](./04-databases)
 - [Java](./05-java)
 - [Spring Boot](./06-spring-boot)
+- [Frontend](./frontend)
 
 ## Estructura
 
@@ -30,6 +31,7 @@ bootcamp-fullstack/
 ├─ 04-databases/        # Ejercicios de Bases de Datos
 ├─ 05-java/             # Ejercicios de Java
 ├─ 06-spring-boot/      # Ejercicios de Spring Boot
+├─ frontend/            # Trabajo de desarrollo utilizando PokéApi
 ├─ .gitignore
 └─ README.md
 ```
