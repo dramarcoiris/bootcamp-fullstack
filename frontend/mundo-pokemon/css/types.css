@@ -1,0 +1,123 @@
+:root {
+    --normal: #a8a77a;
+    --fire: #ee8130;
+    --water: #6390f0;
+    --electric: #f7d02c;
+    --grass: #7ac74c;
+    --ice: #96d9d6;
+    --fighting: #c22e28;
+    --poison: #a33ea1;
+    --ground: #e2bf65;
+    --flying: #a98ff3;
+    --psychic: #f95587;
+    --bug: #a6b91a;
+    --rock: #b6a136;
+    --ghost: #735797;
+    --dragon: #6f35fc;
+    --dark: #705746;
+    --steel: #b7b7ce;
+    --fairy: #d685ad;
+}
+
+// Estilo tipos
+.type li.normal:hover {
+    background-color: var(--normal);
+    border-color: var(--normal);
+    color: white;
+}
+
+.type li.fire:hover {
+    background-color: var(--fire);
+    border-color: var(--fire);
+    color: white;
+}
+
+.type li.water:hover {
+    background-color: var(--water);
+    border-color: var(--water);
+    color: white;
+}
+
+.type li.electric:hover {
+    background-color: var(--electric);
+    border-color: var(--electric);
+    color: white;
+}
+
+.type li.grass:hover {
+    background-color: var(--grass);
+    border-color: var(--grass);
+    color: white;
+}
+
+.type li.ice:hover {
+    background-color: var(--ice);
+    border-color: var(--ice);
+    color: white;
+}
+
+.type li.fighting:hover {
+    background-color: var(--fighting);
+    border-color: var(--fighting);
+    color: white;
+}
+
+.type li.poison:hover {
+    background-color: var(--poison);
+    border-color: var(--poison);
+    color: white;
+}
+
+.type li.ground:hover {
+    background-color: var(--ground);
+    border-color: var(--ground);
+    color: white;
+}
+
+.type li.flying:hover {
+    background-color: var(--flying);
+    border-color: var(--flying);
+    color: white;
+}
+
+.type li.bug:hover {
+    background-color: var(--bug);
+    border-color: var(--bug);
+    color: white;
+}
+
+.type li.rock:hover {
+    background-color: var(--rock);
+    border-color: var(--rock);
+    color: white;
+}
+
+.type li.ghost:hover {
+    background-color: var(--ghost);
+    border-color: var(--ghost);
+    color: white;
+}
+
+.type li.dragon:hover {
+    background-color: var(--dragon);
+    border-color: var(--dragon);
+    color: white;
+}
+
+.type li.dark:hover {
+    background-color: var(--dark);
+    border-color: var(--dark);
+    color: white;
+}
+
+.type li.steel:hover {
+    background-color: var(--steel);
+    border-color: var(--steel);
+    color: white;
+}
+
+.type li.fairy:hover {
+    background-color: var(--fairy);
+    border-color: var(--fairy);
+    color: white;
+}

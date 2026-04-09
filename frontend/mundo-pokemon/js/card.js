@@ -1,4 +1,6 @@
-import { POKEMON_TYPES } from './types.js';
+function getTypeColor(tipo) {
+    return getComputedStyle(document.documentElement).getPropertyValue(`--${tipo}`).trim();
+}
 
 // Tarjeta de un pokemon
 export function createPokemonCard(pokemon) {
@@ -7,11 +9,22 @@ export function createPokemonCard(pokemon) {
     pokemonCard.classList.add('card');
 
     /*** IMAGEN ***/
-
     const pokeImageCont = document.createElement('figure');
     pokemon.tipo.forEach((tipo) => {
         pokeImageCont.classList.add(tipo);
     });
+    // Fondo dinámico según el tipo
+    const tipos = pokemon.tipo;
+    if (tipos.length === 1) {
+        const color = getTypeColor(tipos[0]);
+        pokeImageCont.style.setProperty('--color1', color);
+        pokeImageCont.style.setProperty('--color2', color);
+    } else if (tipos.length === 2) {
+        const color1 = getTypeColor(tipos[0]);
+        const color2 = getTypeColor(tipos[1]);
+        pokeImageCont.style.setProperty('--color1', color1);
+        pokeImageCont.style.setProperty('--color2', color2);
+    }
 
     const pokeImg = document.createElement('img');
     pokeImg.src = pokemon.img;
@@ -35,21 +48,8 @@ export function createPokemonCard(pokemon) {
     //  Array de tipos en elementos de lista
     pokemon.tipo.forEach((tipo) => {
         const li = document.createElement('li');
+        li.classList.add(tipo);
         li.textContent = tipo;
-
-        const color = POKEMON_TYPES[tipo];
-        if (color) {
-            li.addEventListener('mouseenter', () => {
-                li.style.backgroundColor = color;
-                li.style.borderColor = color;
-                li.style.color = '#fff';
-            });
-            li.addEventListener('mouseleave', () => {
-                li.style.backgroundColor = 'transparent';
-                li.style.borderColor = '';
-                li.style.color = '';
-            });
-        }
         typeList.append(li);
     });
 

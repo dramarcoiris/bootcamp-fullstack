@@ -7,7 +7,6 @@
     --background-image-figcaption: #c5c5c3;
     --decoration-top: black;
     --decoration-botom: #e62828;
-    --color-white: white;
     --primary-color: #1e1e1e;
     --primary-color-opacity: #1e1e1e63;
     --secondary-color: #5c2507;
@@ -54,18 +53,21 @@ input::placeholder {
     grid-template-columns: repeat(auto-fit, minmax(250px, 3fr));
     gap: 20px;
     align-content: center;
-    padding-bottom: 2rem;
     margin: 0 auto;
 }
 
 .card {
-    background-color: var(--color-white);
+    background-color: white;
     box-shadow: 0 7px 13px var(--primary-color-opacity);
     transition: transform 0.3s ease-out;
 }
 
 .card:hover {
     transform: scale(1.06) rotate(-0.9deg);
+}
+
+.card:hover img {
+    transform: scale(1.4);
 }
 
 figure {
@@ -78,8 +80,22 @@ figure {
     background-color: var(--background-image-cards);
 }
 
+figure::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    background: linear-gradient(135deg, var(--color1) 40%, var(--color2) 60%);
+    transition: opacity 0.3s ease;
+}
+
+figure:hover::before {
+    opacity: 1;
+}
+
 figure img {
     position: relative;
+    transition: transform 0.3s ease;
 }
 
 figcaption {
@@ -139,6 +155,34 @@ li {
     display: block;
     font-size: 14pt;
     font-weight: 400;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1.5rem;
+}
+
+.buttons button {
+    background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 1rem;
+}
+
+.buttons button:hover {
+    background-color: var(--decoration-botom);
+    transform: translateY(-2px);
+    box-shadow: 0 0 4px 0 var(--secondary-color);
+}
+
+.buttons button:disabled {
+    background-color: var(--primary-color);
+    cursor: not-allowed;
+    opacity: 0.5;
+    transform: none;
 }
 
 /* Decoraciones de fondo */
