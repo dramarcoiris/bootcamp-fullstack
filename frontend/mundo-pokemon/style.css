@@ -11,11 +11,6 @@
     --primary-color: #1e1e1e;
     --primary-color-opacity: #1e1e1e63;
     --secondary-color: #5c2507;
-    --type-poison: rgb(148 15 148);
-    --type-grass: rgb(31 152 16);
-    --type-fire: rgb(240 17 17);
-    --type-flying: rgb(60 224 224);
-    --type-water: rgb(42 135 206);
 }
 
 * {
@@ -83,15 +78,6 @@ figure {
     background-color: var(--background-image-cards);
 }
 
-figure::before {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    content: '';
-    opacity: 0;
-    transition: opacity 0.2s ease;
-}
-
 figure img {
     position: relative;
 }
@@ -156,7 +142,6 @@ li {
 }
 
 /* Decoraciones de fondo */
-
 .box-left {
     position: fixed;
     top: 0;
@@ -203,56 +188,4 @@ li {
     background-color: var(--decoration-botom);
     border-radius: 100px;
     translate: 75px 75px;
-}
-
-/* Fondo de los figure */
-figure.grass.poison::before {
-    background-image: linear-gradient(135deg, var(--type-grass) 40%, var(--type-poison) 60%);
-}
-
-figure.fire::before {
-    background-color: var(--type-fire);
-}
-
-figure.fire.flying::before {
-    background-image: linear-gradient(135deg, var(--type-fire) 40%, var(--type-flying) 60%);
-}
-
-figure.water::before {
-    background-color: var(--type-water);
-}
-
-figure:hover::before {
-    opacity: 1;
-}
-
-/* Color a tipos */
-li.grass:hover {
-    color: var(--color-white);
-    background-color: var(--type-grass);
-    border: var(--type-grass);
-}
-
-li.poison:hover {
-    color: var(--color-white);
-    background-color: var(--type-poison);
-    border: var(--type-poison);
-}
-
-li.fire:hover {
-    color: var(--color-white);
-    background-color: var(--type-fire);
-    border: var(--type-fire);
-}
-
-li.flying:hover {
-    color: var(--color-white);
-    background-color: var(--type-flying);
-    border: var(--type-flying);
-}
-
-li.water:hover {
-    color: var(--color-white);
-    background-color: var(--type-water);
-    border: var(--type-water);
 }
