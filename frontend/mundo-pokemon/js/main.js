@@ -1,5 +1,4 @@
-// import { capturePokemon, pokeSpecies } from './api.js';
-import { getPokemonData, getPage } from './fetchApi.js';
+import { getPokemonData } from './fetchApi.js';
 import { createPokemonCard } from './card.js';
 // import { filterPokemon } from './filter.js';
 

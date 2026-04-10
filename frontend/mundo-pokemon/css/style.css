@@ -66,6 +66,11 @@ input::placeholder {
     transform: scale(1.06) rotate(-0.9deg);
 }
 
+figure img {
+    position: relative;
+    transition: transform 0.3s ease;
+}
+
 .card:hover img {
     transform: scale(1.4);
 }
@@ -81,21 +86,16 @@ figure {
 }
 
 figure::before {
-    content: '';
     position: absolute;
     inset: 0;
-    opacity: 0;
+    content: '';
     background: linear-gradient(135deg, var(--color1) 40%, var(--color2) 60%);
+    opacity: 0;
     transition: opacity 0.3s ease;
 }
 
 figure:hover::before {
     opacity: 1;
-}
-
-figure img {
-    position: relative;
-    transition: transform 0.3s ease;
 }
 
 figcaption {
@@ -159,28 +159,28 @@ li {
 
 .buttons {
     display: flex;
-    justify-content: center;
     gap: 1rem;
+    justify-content: center;
     margin: 1.5rem;
 }
 
 .buttons button {
-    background-color: var(--secondary-color);
-    color: white;
-    border: none;
     padding: 10px 20px;
+    color: white;
+    background-color: var(--secondary-color);
+    border: none;
     border-radius: 1rem;
 }
 
 .buttons button:hover {
     background-color: var(--decoration-botom);
-    transform: translateY(-2px);
     box-shadow: 0 0 4px 0 var(--secondary-color);
+    transform: translateY(-2px);
 }
 
 .buttons button:disabled {
-    background-color: var(--primary-color);
     cursor: not-allowed;
+    background-color: var(--primary-color);
     opacity: 0.5;
     transform: none;
 }

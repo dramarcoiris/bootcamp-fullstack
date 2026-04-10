@@ -18,15 +18,3 @@ export async function getPokemonData(url) {
         evolucion: speciesData.evolves_from_species ? speciesData.evolves_from_species.name : null,
     };
 }
-
-// Paginación
-export async function getPage(url) {
-    const response = await fetch(url);
-    const data = await response.json();
-
-    return {
-        next: data.next,
-        previous: data.previous,
-        results: data.results,
-    };
-}
