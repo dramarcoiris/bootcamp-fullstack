@@ -29,6 +29,5 @@ export default Exercise03;
 · Se ha creado la exportación de tipos para los Props, definidiendo nombre, rol y ciudad.
 · Se ha generado la exportación de App, que es la que construye la ProfileCard
 · En App() se han especificado los Props en ProfileCard
-· Finalmente, para evitar conflictos en la exportación, se ha renombrado la función App() por Exercise03(), 
-ya que se visualiza todo en App.tsx y generaba conflictos
+· Finalmente, para evitar conflictos en la exportación, se ha renombrado la función App() por Exercise03(), ya que se visualiza todo en App.tsx y generaba conflictos
 */
