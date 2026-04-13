@@ -1,6 +1,6 @@
+import CardSection from './CardSection';
 import Title from './Title';
 import Intro from './Intro';
-import CardSection from './CardSection';
 import Footer from './Footer';
 
 function Exercise05() {
