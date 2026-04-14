@@ -3,7 +3,7 @@ type Props = {
 };
 
 function Panel({ children }: Props) {
-    return <section className="Panel">{children}</section>;
+    return <section>{children}</section>;
 }
 
 export default Panel;
