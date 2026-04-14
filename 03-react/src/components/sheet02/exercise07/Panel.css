@@ -1,0 +1,25 @@
+.panel {
+    padding: 20px;
+    margin-bottom: 20px;
+    color: #f9fafb;
+    background-color: #1f2937;
+    border: 1px solid #374151;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 40%);
+}
+
+.panel button {
+    padding: 8px 14px;
+    color: white;
+    cursor: pointer;
+    background-color: #6366f1; /* violeta */
+    border: none;
+    border-radius: 8px;
+    transition:
+        background-color 0.2s ease,
+        transform 0.1s ease;
+}
+
+.panel button:hover {
+    background-color: #4f46e5;
+}

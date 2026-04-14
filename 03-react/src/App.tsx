@@ -4,6 +4,7 @@ import './App.css';
 // import BasicComponentLayout from './components/sheet01/exercise04/Exercise04';
 // import ModulePresentation from './components/sheet01/exercise05/Exercise05';
 // import CourseLanding from './components/sheet01/exercise07/Exercise07';
+// import InfoPanelBootcamp from './components/sheet01/exercise09/Exercise09';
 // import ProfileCardExample from './components/sheet02/exercise03/Errors';
 // import BootcampModules from './components/sheet02/exercise05/Exercise05';
 // import PanelComposition from './components/sheet02/exercise07/Exercise07';
@@ -23,10 +24,10 @@ function App() {
             <CorregirJSX />
             <BasicComponentLayout />
             <ModulePresentation />
-            <CourseLanding /> 
-            */}
+            <CourseLanding />
+            <InfoPanelBootcamp />
 
-            {/*<h1>Hoja de ejercicios 02</h1>
+            <h1>Hoja de ejercicios 02</h1>
             <ProfileCardExample />
             <BootcampModules />
             <PanelComposition />
