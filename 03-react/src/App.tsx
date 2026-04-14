@@ -4,10 +4,13 @@ import './App.css';
 // import BasicComponentLayout from './components/sheet01/exercise04/Exercise04';
 // import ModulePresentation from './components/sheet01/exercise05/Exercise05';
 // import CourseLanding from './components/sheet01/exercise07/Exercise07';
-import ProfileCardExample from './components/sheet02/exercise03/Errors';
+// import ProfileCardExample from './components/sheet02/exercise03/Errors';
 // import BootcampModules from './components/sheet02/exercise05/Exercise05';
-// import PanelComposition from './components/sheet02/exercise07/Exercise07';
+import PanelComposition from './components/sheet02/exercise07/Exercise07';
 // import CourseCatalog from './components/sheet02/exercise09/Exercise09';
+// import Sample from './components/sheet03/exercise03/Sample';
+// import MultipleValue from './components/sheet03/exercise05/ExperimentValue';
+// import FixSample from './components/sheet03/exercise08/FixSample';
 
 function App() {
     return (
@@ -21,11 +24,17 @@ function App() {
             <CourseLanding /> 
             */}
 
+            {/* 
             <h1>Hoja de ejercicios 02</h1>
             <ProfileCardExample />
-            {/* <BootcampModules />
+            <BootcampModules /> */}
             <PanelComposition />
-            <CourseCatalog />  */}
+            {/* <CourseCatalog />  */}
+
+            {/* <h1>Hoja de ejercicios 03</h1>
+            <Sample /> 
+            <MultipleValue />
+            <FixSample /> */}
         </>
     );
 }
