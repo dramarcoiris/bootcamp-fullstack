@@ -1,0 +1,15 @@
+p .count-value {
+    margin-left: 2rem;
+    font-size: 20pt;
+}
+
+button .button-value {
+    display: flex;
+    padding: 10px 20px;
+    margin: 1rem;
+    border-radius: 10px;
+}
+
+button .button-value:hover {
+    background-color: blueviolet;
+}
