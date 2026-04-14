@@ -1,3 +1,5 @@
+import './ProfileCard.css';
+
 export type Props = {
     name: string;
     role: string;

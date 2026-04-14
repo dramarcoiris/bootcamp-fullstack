@@ -1,4 +1,5 @@
 import CourseCard from './CourseCard';
+import './CourseCard.css';
 
 function CourseCatalog() {
     return (
