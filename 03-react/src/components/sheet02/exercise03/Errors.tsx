@@ -19,8 +19,8 @@ function ProfileCard({ name, role, city }: Props) {
 function Exercise03() {
     return (
         <main>
-            <ProfileCard name="Lucía" role="Frontend Developer" city="Madrid"></ProfileCard>
-            <ProfileCard name="Álvaro" role="Backend Developer" city="Sevilla"></ProfileCard>
+            <ProfileCard name="Lucía" role="Frontend Developer" city="Madrid" />
+            <ProfileCard name="Álvaro" role="Backend Developer" city="Sevilla" />
         </main>
     );
 }
