@@ -4,7 +4,7 @@ import { createPokemonCard } from './card.js';
 
 // Selección del contenedor
 const container = document.querySelector('.pokegrid');
-let nextUrl = 'https://pokeapi.co/api/v2/pokemon?limit=20&offset=0';
+let nextUrl = 'https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20';
 let prevUrl = null;
 
 // Recorrer JSON para montar cada poke
