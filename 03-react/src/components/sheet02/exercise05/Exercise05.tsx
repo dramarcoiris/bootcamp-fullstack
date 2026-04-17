@@ -1,5 +1,5 @@
 import ModuleCard from './ModuleCard';
-import './ProfileCard.css';
+import './ModuleCard.css';
 
 function Exercise05() {
     return (

@@ -1,46 +1,32 @@
+import { useState } from 'react';
 import './App.css';
-import WelcomeCard from './components/sheet01/exercise02/WelcomeCard';
-import CorregirJSX from './components/sheet01/exercise03/CorregirJSX';
-import BasicComponentLayout from './components/sheet01/exercise04/Exercise04';
-import ModulePresentation from './components/sheet01/exercise05/Exercise05';
-import CourseLanding from './components/sheet01/exercise07/Exercise07';
-import Fragments from './components/sheet01/exercise08/Exercise08';
-import InfoPanelBootcamp from './components/sheet01/exercise09/Exercise09';
-import ProfileCardExample from './components/sheet02/exercise03/Errors';
-import BootcampModules from './components/sheet02/exercise05/Exercise05';
-import PanelComposition from './components/sheet02/exercise07/Exercise07';
-import CourseCatalog from './components/sheet02/exercise09/Exercise09';
-import Sample from './components/sheet03/exercise03/Sample';
-import MultipleValue from './components/sheet03/exercise05/ExperimentValue';
-import FixSample from './components/sheet03/exercise08/FixSample';
-import ChangeTheme from './components/sheet03/exercise11/ChangeTheme';
-import ItemCounter from './components/sheet03/exercise12/ItemCounter';
+
+import Sheet01 from './components/sheet01/Sheet01';
+import Sheet02 from './components/sheet02/Sheet02';
+import Sheet03 from './components/sheet03/Sheet03';
+import Sheet04 from './components/sheet04/Sheet04';
+import Notes from './components/apuntesClase/Notes';
+
+type View = 'sheet01' | 'sheet02' | 'sheet03' | 'sheet04' | 'notes';
 
 function App() {
+    const [view, setView] = useState<View>('sheet04');
+
     return (
         <>
-            <h1>Hoja de ejercicios 01</h1>
-            <WelcomeCard />
-            <CorregirJSX />
-            <BasicComponentLayout />
-            <ModulePresentation />
-            <Fragments />
-            <CourseLanding />
+            <nav>
+                <button onClick={() => setView('sheet01')}>Sheet 01</button>
+                <button onClick={() => setView('sheet02')}>Sheet 02</button>
+                <button onClick={() => setView('sheet03')}>Sheet 03</button>
+                <button onClick={() => setView('sheet04')}>Sheet 04</button>
+                <button onClick={() => setView('notes')}>Apuntes</button>
+            </nav>
 
-            <InfoPanelBootcamp />
-
-            <h1>Hoja de ejercicios 02</h1>
-            <ProfileCardExample />
-            <BootcampModules />
-            <PanelComposition />
-            <CourseCatalog />
-
-            <h1>Hoja de ejercicios 03</h1>
-            <Sample />
-            <MultipleValue />
-            <FixSample />
-            <ChangeTheme />
-            <ItemCounter />
+            {view === 'sheet01' && <Sheet01 />}
+            {view === 'sheet02' && <Sheet02 />}
+            {view === 'sheet03' && <Sheet03 />}
+            {view === 'sheet04' && <Sheet04 />}
+            {view === 'notes' && <Notes />}
         </>
     );
 }
