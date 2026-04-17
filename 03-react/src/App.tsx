@@ -1,75 +1,32 @@
-import './App.css';
-// import WelcomeCard from './components/sheet01/exercise02/WelcomeCard';
-// import CorregirJSX from './components/sheet01/exercise03/CorregirJSX';
-// import BasicComponentLayout from './components/sheet01/exercise04/Exercise04';
-// import ModulePresentation from './components/sheet01/exercise05/Exercise05';
-// import CourseLanding from './components/sheet01/exercise07/Exercise07';
-// import Fragments from './components/sheet01/exercise08/Exercise08';
-// import InfoPanelBootcamp from './components/sheet01/exercise09/Exercise09';
-// import ProfileCardExample from './components/sheet02/exercise03/Errors';
-// import BootcampModules from './components/sheet02/exercise05/Exercise05';
-// import PanelComposition from './components/sheet02/exercise07/Exercise07';
-// import CourseCatalog from './components/sheet02/exercise09/Exercise09';
-// import Sample from './components/sheet03/exercise03/Sample';
-// import MultipleValue from './components/sheet03/exercise05/ExperimentValue';
-// import FixSample from './components/sheet03/exercise08/FixSample';
-// import ChangeTheme from './components/sheet03/exercise11/ChangeTheme';
-// import ItemCounter from './components/sheet03/exercise12/ItemCounter';
-// import InputControlado from './components/sheet04/apuntesClase/InputControlado';
-// import TextArea from './components/sheet04/apuntesClase/TextArea';
-// import SelectControlado from './components/sheet04/apuntesClase/SelectorControlado';
-// import Checkbox from './components/sheet04/apuntesClase/Checkbox';
-// import { ValidacionFormulario } from './components/sheet04/apuntesClase/ValidacionFormulario';
-// import SampleAccess from './components/sheet04/exercise03/FixedCode';
-import MiComponente from './components/sheet05/apuntesClase/MiComponente';
-import Clock from './components/sheet05/apuntesClase/Clock';
 import { useState } from 'react';
+import './App.css';
+
+import Sheet01 from './components/sheet01/Sheet01';
+import Sheet02 from './components/sheet02/Sheet02';
+import Sheet03 from './components/sheet03/Sheet03';
+import Sheet04 from './components/sheet04/Sheet04';
+import Notes from './components/apuntesClase/Notes';
+
+type View = 'sheet01' | 'sheet02' | 'sheet03' | 'sheet04' | 'notes';
 
 function App() {
-    const [mostrarReloj, setMostrarReloj] = useState(true);
+    const [view, setView] = useState<View>('sheet04');
 
     return (
         <>
-            {/* <h1>Hoja de ejercicios 01</h1>
-            <WelcomeCard />
-            <CorregirJSX />
-            <BasicComponentLayout />
-            <ModulePresentation />
-            <CourseLanding />
-            <Fragments />
-            <InfoPanelBootcamp />
+            <nav>
+                <button onClick={() => setView('sheet01')}>Sheet 01</button>
+                <button onClick={() => setView('sheet02')}>Sheet 02</button>
+                <button onClick={() => setView('sheet03')}>Sheet 03</button>
+                <button onClick={() => setView('sheet04')}>Sheet 04</button>
+                <button onClick={() => setView('notes')}>Apuntes</button>
+            </nav>
 
-            <h1>Hoja de ejercicios 02</h1>
-            <ProfileCardExample />
-            <BootcampModules />
-            <PanelComposition />
-            <CourseCatalog />
-
-            <h1>Hoja de ejercicios 03</h1>
-            <Sample />
-            <MultipleValue />
-            <FixSample />
-            <ChangeTheme />
-            <ItemCounter /> */}
-
-            {/* <h2>Apuntes de clase</h2>
-            <InputControlado />
-            <InputControlado />
-            <TextArea />
-            <SelectControlado />
-            <Checkbox />
-            <ValidacionFormulario /> */}
-
-            {/* <h1>Hoja de ejercicios 04</h1>
-            <SampleAccess /> */}
-
-            <h2>Apuntes de clase</h2>
-            <MiComponente />
-
-            {mostrarReloj && <Clock />}
-            <button onClick={() => setMostrarReloj((prev) => !prev)}>
-                {mostrarReloj ? 'Ocultar reloj' : 'Mostrar reloj'}
-            </button>
+            {view === 'sheet01' && <Sheet01 />}
+            {view === 'sheet02' && <Sheet02 />}
+            {view === 'sheet03' && <Sheet03 />}
+            {view === 'sheet04' && <Sheet04 />}
+            {view === 'notes' && <Notes />}
         </>
     );
 }
