@@ -13,6 +13,7 @@ export function createPokemonCard(pokemon) {
     pokemon.tipo.forEach((tipo) => {
         pokeImageCont.classList.add(tipo);
     });
+
     // Fondo dinámico según el tipo
     const tipos = pokemon.tipo;
     if (tipos.length === 1) {

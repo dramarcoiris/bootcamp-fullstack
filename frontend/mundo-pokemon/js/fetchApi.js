@@ -1,5 +1,3 @@
-const MAIN_URL = `https://pokeapi.co/api/v2/`;
-
 // Fetch a la API
 async function fetchApi(url) {
     const response = await fetch(url);
