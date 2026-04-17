@@ -27,7 +27,7 @@ export function ValidacionFormulario() {
         return valido;
     }
 
-    function handleSubmit(e) {
+    function handleSubmit(e: { preventDefault: () => void }) {
         e.preventDefault();
         if (validarFormulario()) {
             console.log({ nombre, correo });
