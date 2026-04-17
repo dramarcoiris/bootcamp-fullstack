@@ -21,8 +21,13 @@ import './App.css';
 // import Checkbox from './components/sheet04/apuntesClase/Checkbox';
 // import { ValidacionFormulario } from './components/sheet04/apuntesClase/ValidacionFormulario';
 // import SampleAccess from './components/sheet04/exercise03/FixedCode';
+import MiComponente from './components/sheet05/apuntesClase/MiComponente';
+import Clock from './components/sheet05/apuntesClase/Clock';
+import { useState } from 'react';
 
 function App() {
+    const [mostrarReloj, setMostrarReloj] = useState(true);
+
     return (
         <>
             {/* <h1>Hoja de ejercicios 01</h1>
@@ -59,6 +64,12 @@ function App() {
             <SampleAccess /> */}
 
             <h2>Apuntes de clase</h2>
+            <MiComponente />
+
+            {mostrarReloj && <Clock />}
+            <button onClick={() => setMostrarReloj((prev) => !prev)}>
+                {mostrarReloj ? 'Ocultar reloj' : 'Mostrar reloj'}
+            </button>
         </>
     );
 }
