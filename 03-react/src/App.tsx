@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import './App.css';
+import './styles/styles-nav.css';
 
 import Sheet01 from './components/sheet01/Sheet01';
 import Sheet02 from './components/sheet02/Sheet02';
@@ -14,12 +15,22 @@ function App() {
 
     return (
         <>
-            <nav>
-                <button onClick={() => setView('sheet01')}>Sheet 01</button>
-                <button onClick={() => setView('sheet02')}>Sheet 02</button>
-                <button onClick={() => setView('sheet03')}>Sheet 03</button>
-                <button onClick={() => setView('sheet04')}>Sheet 04</button>
-                <button onClick={() => setView('notes')}>Apuntes</button>
+            <nav className="sheets-nav">
+                <button className="sheets-button" onClick={() => setView('notes')}>
+                    Apuntes
+                </button>
+                <button className="sheets-button" onClick={() => setView('sheet01')}>
+                    Sheet 01
+                </button>
+                <button className="sheets-button" onClick={() => setView('sheet02')}>
+                    Sheet 02
+                </button>
+                <button className="sheets-button" onClick={() => setView('sheet03')}>
+                    Sheet 03
+                </button>
+                <button className="sheets-button" onClick={() => setView('sheet04')}>
+                    Sheet 04
+                </button>
             </nav>
 
             {view === 'sheet01' && <Sheet01 />}
