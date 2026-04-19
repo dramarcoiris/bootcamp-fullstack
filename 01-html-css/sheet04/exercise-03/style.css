@@ -11,6 +11,6 @@ input::placeholder {
 }
 
 p::selection {
-    background-color: rgb(110, 4, 110);
-    color: rgb(244, 66, 244);
+    color: rgb(244 66 244);
+    background-color: rgb(110 4 110);
 }

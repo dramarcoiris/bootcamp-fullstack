@@ -1,8 +1,8 @@
 .card {
     padding: 16px;
     margin: 16px;
-    border-radius: 12px;
     background-color: antiquewhite;
+    border-radius: 12px;
 
     & .card__text {
         font-style: italic;
@@ -14,15 +14,15 @@
 }
 
 .card--featured {
+    color: rgb(162 11 199);
     border: 3px solid salmon;
-    color: rgb(162, 11, 199);
 
     & .card__title {
         font-weight: 300;
     }
 
     & .card__link {
-        color: rgb(10, 171, 91);
+        color: rgb(10 171 91);
     }
 
     & .card__link:hover {

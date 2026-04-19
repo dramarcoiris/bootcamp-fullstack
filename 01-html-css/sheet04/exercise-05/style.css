@@ -1,18 +1,18 @@
 .caja-texto {
     height: 100px;
-    overflow: auto;
-    border: 3px solid #d14f7a;
-    background-color: #fff6d7;
-    border-radius: 2rem;
     padding: 1rem;
     margin-bottom: 2rem;
+    overflow: auto;
+    background-color: #fff6d7;
+    border: 3px solid #d14f7a;
+    border-radius: 2rem;
 }
 
 .display span {
-    background-color: slateblue;
-    color: rgb(244 233 250);
-    margin: 5px 5px 10px;
     padding: 5px;
+    margin: 5px 5px 10px;
+    color: rgb(244 233 250);
+    background-color: slateblue;
 }
 
 .display--comparacion span {
