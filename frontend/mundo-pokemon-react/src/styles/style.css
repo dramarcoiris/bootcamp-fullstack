@@ -51,7 +51,7 @@ input::placeholder {
 
 .pokegrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 4fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 3fr));
     gap: 20px;
     align-content: center;
     margin: 0 auto;
