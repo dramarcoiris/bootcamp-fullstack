@@ -1,0 +1,9 @@
+{
+    "extends": [
+        "../../.stylelintrc.json",
+        "stylelint-config-tailwindcss"
+    ],
+    "rules": {
+        "import-notation": null
+    }
+}

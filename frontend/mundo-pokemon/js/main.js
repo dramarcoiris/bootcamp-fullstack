@@ -1,6 +1,5 @@
 import { getPokemonData } from './fetchApi.js';
 import { createPokemonCard } from './card.js';
-// import { filterPokemon } from './filter.js';
 
 // Selección del contenedor
 const container = document.querySelector('.pokegrid');
