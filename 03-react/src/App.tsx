@@ -11,7 +11,7 @@ import Notes from './components/apuntesClase/Notes';
 type View = 'sheet01' | 'sheet02' | 'sheet03' | 'sheet04' | 'notes';
 
 function App() {
-    const [view, setView] = useState<View>('sheet04');
+    const [view, setView] = useState<View>('notes');
 
     return (
         <>
@@ -33,11 +33,11 @@ function App() {
                 </button>
             </nav>
 
+            {view === 'notes' && <Notes />}
             {view === 'sheet01' && <Sheet01 />}
             {view === 'sheet02' && <Sheet02 />}
             {view === 'sheet03' && <Sheet03 />}
             {view === 'sheet04' && <Sheet04 />}
-            {view === 'notes' && <Notes />}
         </>
     );
 }

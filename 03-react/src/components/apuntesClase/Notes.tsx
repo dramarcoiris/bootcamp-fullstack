@@ -7,12 +7,26 @@ import Checkbox from './Checkbox';
 import { ValidacionFormulario } from './ValidacionFormulario';
 import MiComponente from './MiComponente';
 import Clock from './Clock';
+import { TechList, AlumnoList } from './TechList';
+import Password from './Password';
 
 export default function Notes() {
-    const [mostrarReloj, setMostrarReloj] = useState(true);
+    const [mostrarReloj, setMostrarReloj] = useState(false);
+    const [reveal, setReveal] = useState(false);
+
+    function handleClick() {
+        setReveal(true);
+        setTimeout(() => setReveal(false), 2000);
+    }
+
     return (
         <>
             <h2>Apuntes de clase</h2>
+            <Password reveal={reveal} />
+            <button onClick={handleClick}>Ver contraseña</button>
+            <TechList />
+            <AlumnoList />
+
             <InputControlado />
             <InputControlado />
             <TextArea />
@@ -28,3 +42,8 @@ export default function Notes() {
         </>
     );
 }
+
+/*
+Si alguna vez hay errores al mostrar mensajes de error setteando resultados,
+es probable que sean asincronías, revisarbien el código y tenerlo en cuenta
+*/
