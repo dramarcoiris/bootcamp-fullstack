@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './StyleEx07.css';
 
 export default function EditableFile() {
     const [nombre, setNombre] = useState('');
@@ -31,7 +32,7 @@ export default function EditableFile() {
                 <input type="checkbox" checked={aceptado} onChange={(e) => setAceptado(e.target.checked)} />
                 Acepto las condiciones
             </label>
-            <div>
+            <div className="resumen">
                 <h4>Resumen de información:</h4>
                 <p>Nombre: {nombre}</p>
                 <p>Descripción: {descripcion}</p>
