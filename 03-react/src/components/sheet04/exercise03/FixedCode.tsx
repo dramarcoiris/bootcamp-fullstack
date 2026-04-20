@@ -3,7 +3,7 @@ import { useState } from 'react';
 export default function SampleAccess() {
     const [email, setEmail] = useState('');
 
-    function handleSubmit(e) {
+    function handleSubmit(e: { preventDefault: () => void }) {
         e.preventDefault();
         alert(`Dato enviado: ${email}`);
     }
