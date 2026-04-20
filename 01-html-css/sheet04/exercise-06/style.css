@@ -13,46 +13,46 @@ main > * {
 
 nav {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #de6209;
-    padding: 0.5rem 4rem;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.5rem 4rem;
+    background-color: #de6209;
 }
 
 nav img {
-    height: 4rem;
     width: auto;
+    height: 4rem;
 }
 
 .nav-links {
     display: flex;
-    gap: 1rem;
     flex-wrap: wrap;
+    gap: 1rem;
 }
 
 .nav-links a {
+    font-weight: 700;
     color: black;
     text-decoration: none;
-    font-weight: 700;
 }
 
 .botones {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
     gap: 2rem;
+    justify-content: center;
 }
 
 .botones button {
     padding: 0.5rem 2rem;
-    border-radius: 5px;
-    border: none;
-    background-color: #de6209;
-    color: white;
     font-size: large;
     font-weight: 700;
+    color: white;
     cursor: pointer;
+    background-color: #de6209;
+    border: none;
+    border-radius: 5px;
 }
 
 .botones button:hover {
@@ -60,16 +60,16 @@ nav img {
 }
 
 .tarjetas {
-    background-color: #f8b382;
     display: flex;
-    gap: 1rem;
     flex-wrap: wrap;
+    gap: 1rem;
     padding: 1rem;
+    background-color: #f8b382;
 }
 
 .tarjetas article {
     flex: 1 1 200px;
-    background-color: #ffffffb9;
     padding: 1rem;
+    background-color: #ffffffb9;
     border-radius: 8px;
 }

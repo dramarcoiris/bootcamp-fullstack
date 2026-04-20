@@ -1,0 +1,4 @@
+.resumen {
+    background-color: var(--code-bg);
+    border: 1px solid var(--accent);
+}

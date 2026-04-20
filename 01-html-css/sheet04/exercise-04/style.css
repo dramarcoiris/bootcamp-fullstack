@@ -3,11 +3,11 @@
 }
 
 .caja {
-    border: 15px solid rgb(251, 140, 109);
-    border-radius: 2rem;
     width: 400px;
     padding: 20px;
     margin: 10px;
+    border: 15px solid rgb(251 140 109);
+    border-radius: 2rem;
 }
 
 .caja--padding {
