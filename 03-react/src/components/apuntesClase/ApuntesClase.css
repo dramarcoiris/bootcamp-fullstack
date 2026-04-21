@@ -3,3 +3,13 @@
     color: salmon;
     background-color: blueviolet;
 }
+
+.light {
+    color: rgb(47 1 10);
+    background-color: #82e9dfcb;
+}
+
+.dark {
+    color: azure;
+    background-color: rgb(47 54 79);
+}

@@ -33,6 +33,8 @@ function App() {
                 </button>
             </nav>
 
+            {/* Trabajar la navegación con Object.keys() */}
+
             {view === 'notes' && <Notes />}
             {view === 'sheet01' && <Sheet01 />}
             {view === 'sheet02' && <Sheet02 />}
