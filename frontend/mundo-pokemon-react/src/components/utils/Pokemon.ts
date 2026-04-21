@@ -5,3 +5,8 @@ export type Pokemon = {
     img: string;
     evolucion: string | null;
 };
+
+export interface PokemonBasic {
+    name: string;
+    url: string;
+}
