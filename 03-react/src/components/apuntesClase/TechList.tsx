@@ -1,4 +1,5 @@
-import './ApuntesClase.css';
+import './styles/ApuntesClase.css';
+
 const technologies: string[] = ['HTML', 'CSS', 'JavaScript', 'React', 'HTML'];
 const alumnos = [
     {
