@@ -22,7 +22,7 @@ export default function ListadoPokemon({ search }) {
     return (
         <>
             <div>
-                <h1>Listado ({search ? search : 'Comienza a buscar'})</h1>
+                <h1>Listado pokémon ({search ? search : 'Comienza a capturar pokémon'})</h1>
                 <ul>
                     {pokemons
                         .filter(({ name }) => name.toLowerCase().includes(search.toLowerCase()))

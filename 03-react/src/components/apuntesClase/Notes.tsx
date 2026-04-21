@@ -10,6 +10,7 @@ import Clock from './Clock';
 import { TechList, AlumnoList } from './TechList';
 import Password from './Password';
 import Header from './ElevacionEstados/Header';
+import HeaderPokemon from './ElevacionEstados/HeaderPokemon';
 import Listado from './ElevacionEstados/Listado';
 import ThemeProvider from './context/ThemeProvider';
 import ListadoPokemon from './ElevacionEstados/ListadoPokemon';
@@ -18,6 +19,7 @@ export default function Notes() {
     const [mostrarReloj, setMostrarReloj] = useState(false);
     const [reveal, setReveal] = useState(false);
     const [search, setSearch] = useState('');
+    const [searchPokemon, setSearchPokemon] = useState('');
 
     function handleClick() {
         setReveal(true);
@@ -30,7 +32,8 @@ export default function Notes() {
             <ThemeProvider>
                 <Header search={search} handleChange={setSearch} />
                 <Listado search={search} />
-                <ListadoPokemon search={search} />
+                <HeaderPokemon search={searchPokemon} handleChange={setSearchPokemon} />
+                <ListadoPokemon search={searchPokemon} />
             </ThemeProvider>
 
             <Password reveal={reveal} />

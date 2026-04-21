@@ -8,38 +8,39 @@ import Sheet03 from './components/sheet03/Sheet03';
 import Sheet04 from './components/sheet04/Sheet04';
 import Notes from './components/apuntesClase/Notes';
 
-type View = 'sheet01' | 'sheet02' | 'sheet03' | 'sheet04' | 'notes';
+const View = {
+    notes: 'Apuntes',
+    sheet01: 'Hoja 1',
+    sheet02: 'Hoja 2',
+    sheet03: 'Hoja 3',
+    sheet04: 'Hoja 4',
+} as const;
+
+type ViewKey = keyof typeof View;
+const keys = Object.keys(View) as ViewKey[];
+
+const components = {
+    notes: Notes,
+    sheet01: Sheet01,
+    sheet02: Sheet02,
+    sheet03: Sheet03,
+    sheet04: Sheet04,
+} as const;
 
 function App() {
-    const [view, setView] = useState<View>('notes');
+    const [view, setView] = useState<ViewKey>('notes');
+    const CurrentComponent = components[view];
 
     return (
         <>
             <nav className="sheets-nav">
-                <button className="sheets-button" onClick={() => setView('notes')}>
-                    Apuntes
-                </button>
-                <button className="sheets-button" onClick={() => setView('sheet01')}>
-                    Sheet 01
-                </button>
-                <button className="sheets-button" onClick={() => setView('sheet02')}>
-                    Sheet 02
-                </button>
-                <button className="sheets-button" onClick={() => setView('sheet03')}>
-                    Sheet 03
-                </button>
-                <button className="sheets-button" onClick={() => setView('sheet04')}>
-                    Sheet 04
-                </button>
+                {keys.map((key) => (
+                    <button key={key} className="sheets-button" onClick={() => setView(key)}>
+                        {View[key]}
+                    </button>
+                ))}
             </nav>
-
-            {/* Trabajar la navegación con Object.keys() */}
-
-            {view === 'notes' && <Notes />}
-            {view === 'sheet01' && <Sheet01 />}
-            {view === 'sheet02' && <Sheet02 />}
-            {view === 'sheet03' && <Sheet03 />}
-            {view === 'sheet04' && <Sheet04 />}
+            <CurrentComponent />
         </>
     );
 }
