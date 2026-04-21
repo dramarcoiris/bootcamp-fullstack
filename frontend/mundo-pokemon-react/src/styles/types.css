@@ -80,6 +80,12 @@
     border-color: var(--flying);
 }
 
+.type li.psychic {
+    color: white;
+    background-color: var(--psychic);
+    border-color: var(--psychic);
+}
+
 .type li.bug {
     color: white;
     background-color: var(--bug);
