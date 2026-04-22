@@ -2,11 +2,12 @@ import type { Pokemon } from './utils/Pokemon';
 
 type Props = {
     pokemon: Pokemon;
+    onClick: () => void;
 };
 
-export default function PokemonCard({ pokemon }: Props) {
+export default function PokemonCard({ pokemon, onClick }: Props) {
     return (
-        <article className="card">
+        <article className="card" onClick={onClick}>
             <figure>
                 <img src={pokemon.img} alt={pokemon.nombre} />
                 <figcaption>ID / {pokemon.id}</figcaption>
@@ -23,8 +24,7 @@ export default function PokemonCard({ pokemon }: Props) {
                 {pokemon.evolucion && (
                     <div className="evolution">
                         <p>
-                            Evoluciona de:
-                            <span>{pokemon.evolucion}</span>
+                            Evoluciona de:<span>{pokemon.evolucion}</span>
                         </p>
                     </div>
                 )}

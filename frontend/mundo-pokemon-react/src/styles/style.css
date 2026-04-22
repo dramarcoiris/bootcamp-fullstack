@@ -13,11 +13,6 @@
     --secondary-color: #5c2507;
 }
 
-* {
-    box-sizing: content-box;
-    margin: 0;
-}
-
 body {
     position: relative;
     font-family: Ubuntu, sans-serif;
@@ -66,7 +61,7 @@ input::placeholder {
 }
 
 .card:hover {
-    transform: scale(1.06) rotate(-0.9deg);
+    transform: scale(1.06) rotate(0.9deg);
 }
 
 figure img {
