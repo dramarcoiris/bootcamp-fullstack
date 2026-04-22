@@ -1,19 +1,12 @@
-import { useEffect, useState } from 'react';
-import PokemonCard from './PokemonCard';
 import type { Pokemon } from './utils/Pokemon';
-import { fetchPokemons } from './utils/FetchPokemon';
+import PokemonCard from './PokemonCard';
 
-export default function PokemonList({ search }) {
-    const [pokemons, setPokemons] = useState<Pokemon[]>([]);
+interface Props {
+    search: string;
+    pokemons: Pokemon[];
+}
 
-    useEffect(() => {
-        async function loadData() {
-            const data = await fetchPokemons();
-            setPokemons(data);
-        }
-        loadData();
-    }, []);
-
+export default function PokemonList({ search, pokemons }: Props) {
     return (
         <section className="pokegrid">
             {pokemons
