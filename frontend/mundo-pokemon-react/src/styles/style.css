@@ -52,7 +52,7 @@ input::placeholder {
 
 .pokegrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 3fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 3fr));
     gap: 20px;
     align-content: center;
     width: 100%;
@@ -87,8 +87,6 @@ figure {
     align-items: center;
     justify-content: center;
     min-height: 8rem;
-
-    /* overflow: hidden; */
     background-color: var(--background-image-cards);
 }
 
@@ -163,32 +161,4 @@ li {
     display: block;
     font-size: 14pt;
     font-weight: 400;
-}
-
-.buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    margin: 1.5rem;
-}
-
-.buttons button {
-    padding: 10px 20px;
-    color: white;
-    background-color: var(--secondary-color);
-    border: none;
-    border-radius: 1rem;
-}
-
-.buttons button:hover {
-    background-color: var(--decoration-botom);
-    box-shadow: 0 0 4px 0 var(--secondary-color);
-    transform: translateY(-2px);
-}
-
-.buttons button:disabled {
-    cursor: not-allowed;
-    background-color: var(--primary-color);
-    opacity: 0.5;
-    transform: none;
 }
