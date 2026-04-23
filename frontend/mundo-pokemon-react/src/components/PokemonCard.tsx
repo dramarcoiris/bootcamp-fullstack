@@ -2,12 +2,11 @@ import type { Pokemon } from './utils/Pokemon';
 
 type Props = {
     pokemon: Pokemon;
-    onClick: () => void;
 };
 
-export default function PokemonCard({ pokemon, onClick }: Props) {
+export default function PokemonCard({ pokemon }: Props) {
     return (
-        <article className="card" onClick={onClick}>
+        <article className="card">
             <figure>
                 <img src={pokemon.img} alt={pokemon.nombre} />
                 <figcaption>ID / {pokemon.id}</figcaption>

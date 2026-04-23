@@ -7,14 +7,11 @@ import type { Pokemon } from './components/utils/Pokemon';
 import Loading from './components/utils/Loading';
 import PokemonList from './components/PokemonList';
 import PokeSearch from './components/PokemonSearch';
-import usePokemonSelection from './components/hooks/usePokemonSelection';
-import PokeInfoPopup from './components/popup/PokeInfo';
 
 export default function App() {
     const [searchPokemon, setSearchPokemon] = useState('');
     const [pokemons, setPokemons] = useState<Pokemon[]>([]);
     const [loading, setLoading] = useState(true);
-    const { selectedPokemon, openCard, closeCard } = usePokemonSelection(); //custom hook
 
     useEffect(() => {
         async function loadData() {
@@ -43,15 +40,7 @@ export default function App() {
         <main className="container">
             <BackgroundDecorations />
             <PokeSearch search={searchPokemon} handleChange={setSearchPokemon} />
-            <PokemonList
-                search={searchPokemon}
-                pokemons={pokemons}
-                onCardClick={(pokemon) => {
-                    console.log(pokemon.nombre);
-                    openCard(pokemon);
-                }}
-            />
-            <PokeInfoPopup pokemon={selectedPokemon} onClose={closeCard} />
+            <PokemonList search={searchPokemon} pokemons={pokemons} />
         </main>
     );
 }
