@@ -21,6 +21,7 @@ import ParisPage from './pages/ParisPage';
 import GibraltarPage from './pages/GibraltarPage';
 import NotFoundPage from './pages/NotFoundPage';
 import CiudadPage from './pages/CiudadPage';
+import useContador from './hooks/useContador';
 
 // --- COMPONENTES ENCAPSULADOS ---
 const EjercicioReloj = () => {
@@ -76,6 +77,7 @@ const ApuntesDeRutas = () => {
     return (
         <BrowserRouter>
             <h1>¿Dónde vamos?</h1>
+            {/* También sepuede usar NavLink, que mete una clase activa */}
             <Link to="/ciudad/berlin">Berlin</Link>
             <Link to="/ciudad/paris">París</Link>
             <Link to="/ciudad/gibraltar">Gibraltar</Link>
@@ -93,6 +95,27 @@ const ApuntesDeRutas = () => {
             </Routes>
             {/* Las rutas y los links deben estar dentro de browser router */}
         </BrowserRouter>
+    );
+};
+
+const HookContador = () => {
+    const { contador, addOne, substractOne } = useContador(0, 10);
+    const { contador: cont2, addOne: add2, substractOne: subs2 } = useContador(null);
+    return (
+        <>
+            <div>
+                <p>Contador en custom hook</p>
+                <button onClick={substractOne}>-</button>
+                <input className="bg-white text-black" value={contador} readOnly />
+                <button onClick={addOne}>+</button>
+            </div>
+            <div>
+                <p>Contador en custom hook desestructurado</p>
+                <button onClick={subs2}>-</button>
+                <input className="bg-white text-black" value={cont2} readOnly />
+                <button onClick={add2}>+</button>
+            </div>
+        </>
     );
 };
 
@@ -116,6 +139,7 @@ export default function Notes() {
             </>
         ),
         Rutas: ApuntesDeRutas,
+        'CustomHook Contador': HookContador,
     };
 
     const [ejercicioActivo, setEjercicioActivo] = useState(Object.keys(APUNTES)[0]);
@@ -124,7 +148,10 @@ export default function Notes() {
     return (
         <>
             <h1>Apuntes de clase</h1>
-            <select value={ejercicioActivo} onChange={(e) => setEjercicioActivo(e.target.value)}>
+            <select
+                className="mb-3 bg-white rounded"
+                value={ejercicioActivo}
+                onChange={(e) => setEjercicioActivo(e.target.value)}>
                 <option value="">-- Selecciona un ejercicio --</option>
                 {Object.keys(APUNTES).map((key) => (
                     <option key={key} value={key}>
@@ -132,8 +159,6 @@ export default function Notes() {
                     </option>
                 ))}
             </select>
-
-            <hr />
 
             <main>{ComponenteActual ? <ComponenteActual /> : <p>Selecciona un ejercicio</p>}</main>
         </>
