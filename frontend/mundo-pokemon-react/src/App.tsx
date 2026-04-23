@@ -47,7 +47,7 @@ export default function App() {
                 search={searchPokemon}
                 pokemons={pokemons}
                 onCardClick={(pokemon) => {
-                    console.log('¡Click detectado en:', pokemon.nombre);
+                    console.log(pokemon.nombre);
                     openCard(pokemon);
                 }}
             />
