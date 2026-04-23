@@ -13,6 +13,7 @@
     color: var(--text-h);
     cursor: pointer;
     background: transparent;
+    background-color: var(--bg-button);
     border: 1px solid var(--border);
     border-radius: 1rem;
     transition: all 0.2s ease;
