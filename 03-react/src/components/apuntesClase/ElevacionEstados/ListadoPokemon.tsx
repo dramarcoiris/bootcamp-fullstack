@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import '../styles/ApuntesClase.css';
 
 interface PokemonBasic {
     name: string;

@@ -22,6 +22,7 @@ import GibraltarPage from './pages/GibraltarPage';
 import NotFoundPage from './pages/NotFoundPage';
 import CiudadPage from './pages/CiudadPage';
 import useContador from './hooks/useContador';
+import Parent from './MemoDemo';
 
 // --- COMPONENTES ENCAPSULADOS ---
 const EjercicioReloj = () => {
@@ -29,7 +30,9 @@ const EjercicioReloj = () => {
     return (
         <div>
             {mostrar && <Clock />}
-            <button onClick={() => setMostrar(!mostrar)}>{mostrar ? 'Ocultar reloj' : 'Mostrar reloj'}</button>
+            <button className="botones" onClick={() => setMostrar(!mostrar)}>
+                {mostrar ? 'Ocultar reloj' : 'Mostrar reloj'}
+            </button>
         </div>
     );
 };
@@ -43,22 +46,21 @@ const EjercicioPassword = () => {
     return (
         <>
             <Password reveal={reveal} />
-            <button onClick={handleClick}>Ver contraseña</button>
+            <button className="botones" onClick={handleClick}>
+                Ver contraseña
+            </button>
         </>
     );
 };
 
 const EjercicioContexto = () => {
     const [search, setSearch] = useState('');
-    const [searchPokemon, setSearchPokemon] = useState('');
     return (
         <ThemeProvider>
             <LoginProvider>
                 <Header search={search} handleChange={setSearch} />
             </LoginProvider>
             <Listado search={search} />
-            <HeaderPokemon search={searchPokemon} handleChange={setSearchPokemon} />
-            <ListadoPokemon search={searchPokemon} />
         </ThemeProvider>
     );
 };
@@ -140,6 +142,7 @@ export default function Notes() {
         ),
         Rutas: ApuntesDeRutas,
         'CustomHook Contador': HookContador,
+        Memo: Parent,
     };
 
     const [ejercicioActivo, setEjercicioActivo] = useState(Object.keys(APUNTES)[0]);

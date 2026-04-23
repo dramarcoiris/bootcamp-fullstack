@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
-import '../styles/ApuntesClase.css';
 
 const cursos = [
     'Git',

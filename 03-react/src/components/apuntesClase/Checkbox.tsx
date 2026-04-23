@@ -11,26 +11,28 @@ export default function Checkbox() {
                 Acepto las condiciones
             </label>
             <p>{aceptado ? 'Aceptada' : 'Pendiente de aceptación'}</p>
-            <label>
-                <input
-                    type="radio"
-                    name="sexo"
-                    value="nada"
-                    checked={sexo === 'nada'}
-                    onChange={(e) => setSexo('nada')}
-                />
-                Nada
-            </label>
-            <label>
-                <input
-                    type="radio"
-                    name="sexo"
-                    value="nada"
-                    checked={sexo === 'poco'}
-                    onChange={(e) => setSexo('poco')}
-                />
-                Poco
-            </label>
+            <div className="mt-3">
+                <label>
+                    <input
+                        type="radio"
+                        name="sexo"
+                        value="nada"
+                        checked={sexo === 'nada'}
+                        onChange={(e) => setSexo('nada')}
+                    />
+                    Nada
+                </label>
+                <label>
+                    <input
+                        type="radio"
+                        name="sexo"
+                        value="nada"
+                        checked={sexo === 'poco'}
+                        onChange={(e) => setSexo('poco')}
+                    />
+                    Poco
+                </label>
+            </div>
             <p>Tienes {sexo} sexo</p>
         </section>
     );

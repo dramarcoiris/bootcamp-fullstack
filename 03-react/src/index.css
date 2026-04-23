@@ -73,6 +73,30 @@ form input {
     border: 1px solid var(--border);
 }
 
-input[type='submit'] {
+.botones {
+    padding: 0.5rem;
+    color: var(--accent);
+    background-color: var(--bg-button);
+    border: 1px solid var(--accent);
+    border-radius: 5px;
+}
+
+.avanzadillo {
+    font-weight: 500;
+    color: white;
     background-color: var(--accent);
+}
+
+.light {
+    color: var(--accent);
+    background-color: #ea8afb;
+}
+
+.dark {
+    color: azure;
+    background-color: #38085d;
+
+    h1 {
+        color: azure;
+    }
 }

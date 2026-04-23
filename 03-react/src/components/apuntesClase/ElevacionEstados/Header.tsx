@@ -9,20 +9,28 @@ export default function Header({ search, handleChange }) {
 
     return (
         <>
-            <h1>Buscador</h1>
-            {loggedin && <span>¡Buenos días {username}!</span>}
-            <button className="bg-white text-blue-600" onClick={loggedin ? logout : login}>
-                {loggedin ? 'Logout' : 'Logout'}
-            </button>
-            <button onClick={toggleTheme} className="bg-pink-400 text-black">
-                Cambiar tema
-            </button>
-            <input
-                type="search"
-                value={search}
-                onChange={(e) => handleChange(e.target.value)}
-                className="bg-blue-200 text-black"
-            />
+            <div>
+                <h2>Iniciando</h2>
+                <section className="mb-2">{loggedin && <span>¡Buenos días {username}!</span>}</section>
+                <button className="botones" onClick={loggedin ? logout : login}>
+                    {loggedin ? 'Logout' : 'Login'}
+                </button>
+            </div>
+            <div>
+                <h2>Cambiar tema de la lista</h2>
+                <button onClick={toggleTheme} className="botones mr-2">
+                    Cambiar tema
+                </button>
+            </div>
+            <div>
+                <h2>Buscador</h2>
+                <input
+                    type="search"
+                    value={search}
+                    onChange={(e) => handleChange(e.target.value)}
+                    className="bg-white"
+                />
+            </div>
         </>
     );
 }

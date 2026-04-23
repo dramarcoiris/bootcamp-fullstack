@@ -7,9 +7,11 @@ export default function TextArea() {
         <section>
             <label htmlFor="bio">Biografía: </label>
             <br />
-            <textarea id="bio" value={bio} onChange={(e) => setBio(e.target.value)}></textarea>
+            <textarea className="bg-white" id="bio" value={bio} onChange={(e) => setBio(e.target.value)}></textarea>
             <p>{bio}</p>
-            <button onClick={() => setBio('')}>Limpiar</button>
+            <button className="botones" onClick={() => setBio('')}>
+                Limpiar
+            </button>
         </section>
     );
 }
