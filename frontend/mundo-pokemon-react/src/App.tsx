@@ -7,6 +7,7 @@ import type { Pokemon } from './components/utils/Pokemon';
 import Loading from './components/utils/Loading';
 import PokemonList from './components/PokemonList';
 import PokeSearch from './components/PokemonSearch';
+import { BrowserRouter } from 'react-router-dom';
 
 export default function App() {
     const [searchPokemon, setSearchPokemon] = useState('');
@@ -28,6 +29,7 @@ export default function App() {
         loadData();
     }, []);
 
+    // Condicional para la pantalla de carga
     if (loading) {
         return (
             <>
@@ -40,7 +42,9 @@ export default function App() {
         <main className="container">
             <BackgroundDecorations />
             <PokeSearch search={searchPokemon} handleChange={setSearchPokemon} />
-            <PokemonList search={searchPokemon} pokemons={pokemons} />
+            <BrowserRouter>
+                <PokemonList search={searchPokemon} pokemons={pokemons} />
+            </BrowserRouter>
         </main>
     );
 }
