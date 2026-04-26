@@ -1,17 +1,9 @@
 import type { Pokemon, PokemonBasic } from './Pokemon';
-
+import { bestPokeImage } from './PokeImages';
 const capitalize = (name: string): string => name.charAt(0).toUpperCase() + name.slice(1);
-const getBestImage = (sprites: any): string => {
-    return (
-        sprites.versions?.['generation-v']?.['black-white']?.animated?.front_default ??
-        sprites.other?.['official-artwork']?.front_default ??
-        sprites.front_default ??
-        'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png'
-    );
-};
 
 export async function fetchPokemons(): Promise<Pokemon[]> {
-    const response = await fetch('https://pokeapi.co/api/v2/pokemon');
+    const response = await fetch('https://pokeapi.co/api/v2/pokemon?limit=-1');
     const data = await response.json();
 
     return Promise.all(
@@ -26,7 +18,7 @@ export async function fetchPokemons(): Promise<Pokemon[]> {
                 id: pokeData.id,
                 nombre: capitalize(pokeData.name),
                 tipo: pokeData.types.map((type: any) => type.type.name),
-                img: getBestImage(pokeData.sprites),
+                img: bestPokeImage(pokeData.sprites),
                 evolucion: speciesData.evolves_from_species ? capitalize(speciesData.evolves_from_species.name) : null,
             };
         }),
