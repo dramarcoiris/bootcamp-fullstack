@@ -11,9 +11,11 @@ export default function InputControlado() {
     return (
         <section>
             <label htmlFor="nombre">Nombre: </label>
-            <input id={id} type="text" value={nombre} onChange={handleChange}></input>
+            <input className="bg-white" id={id} type="text" value={nombre} onChange={handleChange}></input>
             <p>Hola, {nombre || 'persona anónima'}</p>
-            <button onClick={() => setNombre('')}>Limpiar</button>
+            <button className="botones mt-2" onClick={() => setNombre('')}>
+                Limpiar
+            </button>
         </section>
     );
 }

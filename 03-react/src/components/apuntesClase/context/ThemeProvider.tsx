@@ -16,3 +16,18 @@ export default function ThemeProvider({ children }) {
 
     return <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>;
 }
+
+{
+    /*  Esta es la estructura básica para crear un provider:
+
+export default function ThemeProvider({ children }) {
+    const value = {};
+
+    return (
+        <ThemeContext.Provider value={value}>
+            {children}
+        </ThemeContext.Provider>;
+    )
+}
+*/
+}

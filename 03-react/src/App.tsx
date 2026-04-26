@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import './App.css';
 import './styles/styles-nav.css';
 
 import Sheet01 from './components/sheet01/Sheet01';

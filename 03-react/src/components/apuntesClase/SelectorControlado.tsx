@@ -5,7 +5,7 @@ export default function SelectControlado() {
     return (
         <section>
             <label htmlFor="nivel">Nivel: </label>
-            <select id="nivel" value={nivel} onChange={(e) => setNivel(e.target.value)}>
+            <select className="bg-white" id="nivel" value={nivel} onChange={(e) => setNivel(e.target.value)}>
                 <option value="" disabled>
                     Selecciona una opción...
                 </option>

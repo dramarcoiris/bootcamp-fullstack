@@ -46,7 +46,9 @@ export function ValidacionFormulario() {
             {errors.correo.length > 0 && <p className="error">{errors.correo.join(', ')}</p>}
             {/* <input type="submit" value="Enviar" disabled={!formularioValido} /> */}
 
-            <input type="submit" value="Enviar" disabled={!formularioValido} />
+            <button className="botones ml-4" type="submit" value="Enviar" disabled={!formularioValido}>
+                Enviar
+            </button>
         </form>
     );
 }

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { BrowserRouter, Link, Route, Routes } from 'react-router';
 
 import InputControlado from './InputControlado';
 import TextArea from './TextArea';
@@ -14,45 +15,155 @@ import HeaderPokemon from './ElevacionEstados/HeaderPokemon';
 import Listado from './ElevacionEstados/Listado';
 import ThemeProvider from './context/ThemeProvider';
 import ListadoPokemon from './ElevacionEstados/ListadoPokemon';
+import LoginProvider from './context/LoginProvider';
+import BerlinPage from './pages/BerlinPage';
+import ParisPage from './pages/ParisPage';
+import GibraltarPage from './pages/GibraltarPage';
+import NotFoundPage from './pages/NotFoundPage';
+import CiudadPage from './pages/CiudadPage';
+import useContador from './hooks/useContador';
+import Parent from './MemoDemo';
 
-export default function Notes() {
-    const [mostrarReloj, setMostrarReloj] = useState(false);
+// --- COMPONENTES ENCAPSULADOS ---
+const EjercicioReloj = () => {
+    const [mostrar, setMostrar] = useState(false);
+    return (
+        <div>
+            {mostrar && <Clock />}
+            <button className="botones" onClick={() => setMostrar(!mostrar)}>
+                {mostrar ? 'Ocultar reloj' : 'Mostrar reloj'}
+            </button>
+        </div>
+    );
+};
+
+const EjercicioPassword = () => {
     const [reveal, setReveal] = useState(false);
-    const [search, setSearch] = useState('');
-    const [searchPokemon, setSearchPokemon] = useState('');
-
-    function handleClick() {
+    const handleClick = () => {
         setReveal(true);
         setTimeout(() => setReveal(false), 2000);
-    }
+    };
+    return (
+        <>
+            <Password reveal={reveal} />
+            <button className="botones" onClick={handleClick}>
+                Ver contraseña
+            </button>
+        </>
+    );
+};
+
+const EjercicioContexto = () => {
+    const [search, setSearch] = useState('');
+    return (
+        <ThemeProvider>
+            <LoginProvider>
+                <Header search={search} handleChange={setSearch} />
+            </LoginProvider>
+            <Listado search={search} />
+        </ThemeProvider>
+    );
+};
+
+const EjercicioBusquedaPokemon = () => {
+    const [searchPokemon, setSearchPokemon] = useState('');
+    return (
+        <>
+            <HeaderPokemon search={searchPokemon} handleChange={setSearchPokemon} />
+            <ListadoPokemon search={searchPokemon} />
+        </>
+    );
+};
+
+const ApuntesDeRutas = () => {
+    return (
+        <BrowserRouter>
+            <h1>¿Dónde vamos?</h1>
+            {/* También sepuede usar NavLink, que mete una clase activa */}
+            <Link to="/ciudad/berlin">Berlin</Link>
+            <Link to="/ciudad/paris">París</Link>
+            <Link to="/ciudad/gibraltar">Gibraltar</Link>
+            <Routes>
+                {/* <Route path="/berlin" element={<BerlinPage />} />
+                    <Route path="/paris" element={<ParisPage />} />
+                    <Route path="/gibraltar" element={<GibraltarPage />} /> */}
+                <Route path="/ciudad" element={<CiudadPage />}>
+                    <Route path="berlin" element={<BerlinPage />} />
+                    <Route path="paris" element={<ParisPage />} />
+                    <Route path="gibraltar" element={<GibraltarPage />} />
+                </Route>
+                <Route path="*" element={<NotFoundPage />} />
+                {/* <Route path="/ciudad/:nombre" element={<CiudadPage />} /> */}
+            </Routes>
+            {/* Las rutas y los links deben estar dentro de browser router */}
+        </BrowserRouter>
+    );
+};
+
+const HookContador = () => {
+    const { contador, addOne, substractOne } = useContador(0, 10);
+    const { contador: cont2, addOne: add2, substractOne: subs2 } = useContador(null);
+    return (
+        <>
+            <div>
+                <p>Contador en custom hook</p>
+                <button onClick={substractOne}>-</button>
+                <input className="bg-white text-black" value={contador} readOnly />
+                <button onClick={addOne}>+</button>
+            </div>
+            <div>
+                <p>Contador en custom hook desestructurado</p>
+                <button onClick={subs2}>-</button>
+                <input className="bg-white text-black" value={cont2} readOnly />
+                <button onClick={add2}>+</button>
+            </div>
+        </>
+    );
+};
+
+// --- COMPONENTE PRINCIPAL ---
+export default function Notes() {
+    const APUNTES = {
+        Input: InputControlado,
+        TextArea: TextArea,
+        'Select Controlado': SelectControlado,
+        Checkbox: Checkbox,
+        Formulario: ValidacionFormulario,
+        'Componente Sincronizado': MiComponente,
+        'Reloj Digital': EjercicioReloj,
+        'Validación Password': EjercicioPassword,
+        'Sistema de Temas (Context)': EjercicioContexto,
+        'Busqueda Pokemon': EjercicioBusquedaPokemon,
+        'Listas de Alumnos': () => (
+            <>
+                <TechList />
+                <AlumnoList />
+            </>
+        ),
+        Rutas: ApuntesDeRutas,
+        'CustomHook Contador': HookContador,
+        Memo: Parent,
+    };
+
+    const [ejercicioActivo, setEjercicioActivo] = useState(Object.keys(APUNTES)[0]);
+    const ComponenteActual = APUNTES[ejercicioActivo];
 
     return (
         <>
-            <h2>Apuntes de clase</h2>
-            <ThemeProvider>
-                <Header search={search} handleChange={setSearch} />
-                <Listado search={search} />
-                <HeaderPokemon search={searchPokemon} handleChange={setSearchPokemon} />
-                <ListadoPokemon search={searchPokemon} />
-            </ThemeProvider>
+            <h1>Apuntes de clase</h1>
+            <select
+                className="mb-3 bg-white rounded"
+                value={ejercicioActivo}
+                onChange={(e) => setEjercicioActivo(e.target.value)}>
+                <option value="">-- Selecciona un ejercicio --</option>
+                {Object.keys(APUNTES).map((key) => (
+                    <option key={key} value={key}>
+                        {key}
+                    </option>
+                ))}
+            </select>
 
-            <Password reveal={reveal} />
-            <button onClick={handleClick}>Ver contraseña</button>
-            <TechList />
-            <AlumnoList />
-
-            <InputControlado />
-            <InputControlado />
-            <TextArea />
-            <SelectControlado />
-            <Checkbox />
-            <ValidacionFormulario />
-            <MiComponente />
-
-            {mostrarReloj && <Clock />}
-            <button onClick={() => setMostrarReloj((prev) => !prev)}>
-                {mostrarReloj ? 'Ocultar reloj' : 'Mostrar reloj'}
-            </button>
+            <main>{ComponenteActual ? <ComponenteActual /> : <p>Selecciona un ejercicio</p>}</main>
         </>
     );
 }
