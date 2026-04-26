@@ -1,9 +1,19 @@
-// import { Outlet } from 'react-router-dom';
+import { useState } from 'react';
+import type { Pokemon } from '../Pokemon';
+import PokemonList from '../../PokemonList';
+import PokeSearch from '../../PokemonSearch';
 
-export default function PokePage() {
+interface Props {
+    pokemons: Pokemon[];
+}
+
+export default function PokePage({ pokemons }: Props) {
+    const [searchPokemon, setSearchPokemon] = useState('');
+
     return (
         <main>
-            <h1>Pokedex</h1>
+            <PokeSearch search={searchPokemon} handleChange={setSearchPokemon} />
+            <PokemonList search={searchPokemon} pokemons={pokemons} />
         </main>
     );
 }

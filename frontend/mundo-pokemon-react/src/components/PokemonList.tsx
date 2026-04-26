@@ -12,7 +12,7 @@ export default function PokemonList({ search, pokemons }: Props) {
             {pokemons
                 .filter((pokemon) => pokemon.nombre.toLowerCase().includes(search?.toLowerCase() ?? ''))
                 .map((pokemon) => (
-                    <PokemonCard pokemon={pokemon} />
+                    <PokemonCard key={pokemon.id} pokemon={pokemon} />
                 ))}
         </section>
     );

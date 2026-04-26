@@ -5,14 +5,13 @@ import { useEffect, useState } from 'react';
 import { fetchPokemons } from './components/utils/FetchPokemon';
 import type { Pokemon } from './components/utils/Pokemon';
 import Loading from './components/utils/Loading';
-import PokemonList from './components/PokemonList';
-import PokeSearch from './components/PokemonSearch';
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import PokePage from './components/utils/routes/PokePage';
+import PokemonDetail from './components/utils/routes/PokemonDetail';
 
 export default function App() {
-    const [searchPokemon, setSearchPokemon] = useState('');
-    const [pokemons, setPokemons] = useState<Pokemon[]>([]);
     const [loading, setLoading] = useState(true);
+    const [pokemons, setPokemons] = useState<Pokemon[]>([]);
 
     useEffect(() => {
         async function loadData() {
@@ -40,10 +39,12 @@ export default function App() {
     }
     return (
         <main className="container">
-            <BackgroundDecorations />
-            <PokeSearch search={searchPokemon} handleChange={setSearchPokemon} />
             <BrowserRouter>
-                <PokemonList search={searchPokemon} pokemons={pokemons} />
+                <BackgroundDecorations />
+                <Routes>
+                    <Route path="/" element={<PokePage pokemons={pokemons} />} />
+                    <Route path="pokemon/:name" element={<PokemonDetail />} />
+                </Routes>
             </BrowserRouter>
         </main>
     );
