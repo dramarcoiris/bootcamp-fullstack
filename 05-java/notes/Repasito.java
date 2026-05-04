@@ -56,7 +56,6 @@ public class Repasito {
 
         Scanner sc = new Scanner(System.in);
         /*
-        // 
         System.out.println("Introduce edad: ");
         int edad = sc.nextInt();
         System.out.println(edad);
