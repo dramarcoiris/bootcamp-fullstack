@@ -1,3 +1,4 @@
+package exercise05;
 public class AnalisisNotas {
     public static void main(String[] args) {
         int[] notas = {7, 4, 9, 6, 5};
@@ -61,7 +62,7 @@ public class AnalisisNotas {
     public static int contarSuspensas(int[] notas) {
         int contador = 0;
         for (int nota: notas) {
-            if (contador < 5) {
+            if (nota < 5) {
                 contador++;
             }
         }

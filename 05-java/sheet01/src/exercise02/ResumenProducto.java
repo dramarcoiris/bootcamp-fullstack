@@ -1,3 +1,5 @@
+package exercise02;
+
 public class ResumenProducto {
     public static void main(String[] args) {
         String nombre = "Teclado mecánico";
