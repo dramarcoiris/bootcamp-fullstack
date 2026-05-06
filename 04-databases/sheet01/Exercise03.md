@@ -2,7 +2,7 @@
 
 Una persona ha diseñado así una base de datos para una biblioteca:
 
-```bd
+```sql
 biblioteca (
 socio_nombre,
 socio_email,
@@ -26,24 +26,25 @@ estado_prestamo
 
 Indica las **entidades** que crearías:
 
-- Socio
-- Libro
-- Préstamo
+- socio
+- libro
+- prestamo
+- prestamo_libros
 
 ### 3.3 Relaciones
 
-```bd
-Socio __(1, 1)__ --1:N-- __(1, n)__ Prestamo
+```sql
+[SOCIO]  1:N  [PPRESTAMO]
 
-Prestamo __(1, n)__ --N:M-- __(0, n)__ Libro
+[PPRESTAMO]  N:M  [LIBRO] --> [PRESTAMO_LIBROS]
 ```
 
 ### 3.4 Modelo relacional corregido
 
-```bd
+```sql
 socios(
-id PK,
-DNI,
+id_socio PK,
+dni,
 nombre,
 email,
 telefono,
@@ -51,16 +52,21 @@ direccion
 )
 
 libros(
-id PK,
-ISBN,
+id_libro PK,
+isbn,
 titulo,
 autor
 )
 
 prestamos(
-id PK,
+id_prestamo PK,
+id_socio FK,
 fecha,
 devolucion,
 estado
+)
+prestamo_libros(
+id_prestamo PK FK,
+id_libro PK FK,
 )
 ```

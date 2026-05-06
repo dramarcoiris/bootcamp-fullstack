@@ -16,4 +16,4 @@
 
 ## ¿Qué criterio has usado para decidir si algo es una entidad?
 
-Las relaciones está claro que se expresan como pertenencia o acción entre entidades. Las entidades tienen una clara diferenciación y los atributos son datos almacenados de dichas entidades. El ejemplo claro sería el producto como entidad y su precio como atributo.
+Las relaciones está claro que se expresan como pertenencia o acción entre entidades. Las entidades tienen una clara diferenciación y los atributos son datos almacenados de dichas entidades. El ejemplo claro sería el `producto` como entidad y su `precio` como atributo.

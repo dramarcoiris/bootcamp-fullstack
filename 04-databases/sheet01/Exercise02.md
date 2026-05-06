@@ -4,7 +4,7 @@ Una clínica veterinaria registra propietarios, mascotas y citas.
 
 De cada propietario se guarda:
 
-```bd
+```sql
 nombre
 email
 teléfono
@@ -12,7 +12,7 @@ teléfono
 
 De cada mascota se guarda:
 
-```bd
+```sql
 nombre
 especie
 raza
@@ -24,7 +24,7 @@ mascotas.
 
 De cada cita se guarda:
 
-```bd
+```sql
 fecha
 motivo
 observaciones
@@ -58,24 +58,24 @@ Cada cita pertenece a una mascota. Una mascota puede tener muchas citas.
 
 ## Relaciones y cardinalidades:
 
-```bd
-Propietario __(1, n)__ --1:N-- __(1,1)__ Mascota
+```sql
+[PROPIETARIO]  1:N  [MASCOTA]
 
-Mascota __(0,n)__ --1:N-- __(1,1)__ Cita
+[MASCOTA]  1:N  [CITA]
 ```
 
 ## Diagrama ER:
 
-[PROPIETARIO] 1 ---- N [MASCOTA] 1 ---- N [CITA] (NO COMPLETADO)
+[PROPIETARIO] 1 ---- N [MASCOTA] 1 ---- N [CITA]
 
 ## Modelo relacional:
 
-```bd
+```sql
 propietarios (
 id PK,
 nombre,
 email,
-telefono,
+telefono
 )
 
 mascotas (
@@ -92,7 +92,7 @@ id PK,
 mascota_id FK,
 fecha,
 motivo,
-observaciones,
+observaciones
 )
 ```
 
@@ -103,3 +103,5 @@ Al menos tres:
 - Motivo de la cita NOT NULL
 - Teléfono de propietario NOT NULL
 - Email de propietario UNIQUE
+- Toda mascota debe pertenecer a un propietario existente
+- Toda cita debe pertenecer a una mascota existente
