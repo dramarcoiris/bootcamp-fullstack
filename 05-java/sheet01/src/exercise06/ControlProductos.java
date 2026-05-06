@@ -17,7 +17,7 @@ public class ControlProductos {
         int[] stocks = new int[cantidad];
         String[] estados = new String[cantidad];
 
-        registrarProductos(sc ,nombres, precios, stocks, estados);
+        registrarProductos(sc, nombres, precios, stocks, estados);
         mostrarProductos(nombres, precios, stocks, estados);
 
         double total = calcularValorTotal(precios, stocks);
