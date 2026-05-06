@@ -24,7 +24,7 @@ Componentes de ejecución
 
 ### JAVA DEVELOPMENT KIT (JDK)
 
-Para compilar --> **javac**
+Para compilar --> **javac**  
 Para ejecutar --> **java**  
 Herramientas de desarrollo  
 Librerías  

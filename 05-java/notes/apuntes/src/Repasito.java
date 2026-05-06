@@ -29,7 +29,7 @@ public class Repasito {
         // Esta comparación se debe usar con tipos primitivos
         System.out.println(nombre1 == "Juan");
 
-        // En este caso usamos el método de la clase String equals
+        // En este caso usamos el metodo de la clase String equals
         System.out.println(nombre1.equals(nombre2));
 
     //--- Operadores lógicos (&&, ||, !) --- Esto ya lo tenemos visto
@@ -56,7 +56,6 @@ public class Repasito {
 
         Scanner sc = new Scanner(System.in);
         /*
-        // 
         System.out.println("Introduce edad: ");
         int edad = sc.nextInt();
         System.out.println(edad);
@@ -121,7 +120,5 @@ public class Repasito {
         for (String nombre: nombres) {
             System.out.println(nombre);
         }
-
-
     }
 }
