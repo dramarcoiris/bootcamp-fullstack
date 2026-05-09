@@ -1,3 +1,4 @@
+package introduccion;
 public class Media {
     public static void main(String[] args) {
         int[] notasClase = {2, 5, 7, 8, 9};
