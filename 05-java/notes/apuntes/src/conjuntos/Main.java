@@ -30,7 +30,7 @@ public class Main {
             System.out.println(rol);
         }
 
-        /* Est ono falla necesariamente, pero los conjuntos se recorren con FOREACH, no con FOR
+        /* Esto no falla necesariamente, pero los conjuntos se recorren con FOREACH, no con FOR
         for(int i = 0; i <= roles.size(); i++) {
             System.out.println(roles);
         }
@@ -43,3 +43,8 @@ public class Main {
         }
     }
 }
+
+/*
+Los conjuntos no admiten duplicdos
+HashSet -> No tienen orden predeterminado, utiliza el hash del objeto. Se implementa .equals() y .hashcode()
+*/
