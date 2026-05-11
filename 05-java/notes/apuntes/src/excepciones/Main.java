@@ -22,11 +22,19 @@ public class Main {
 
 /*
 Podemos usar exepciones para decisiones de dominio
+Estructura try-catch
+Cada bloque catch debería capturar una exepción. 
+No deberíamos capturar exeption e porque podemos no saber qué estamos intentando controlar
+
+Todas derivan de throw exeption.
 En el constructor podemos definir las exepciones usando throw new (la exepción)
 
 Cuando se incumplen reglas de dominio, se lanzan excepciones.
 Se para la ejecución.
 
-Las excepciones chequeadas hay que capturarlas SÍ o SÍ
+Las excepciones chequeadas hay que capturarlas SÍ o SÍ. El compilador nos obliga a capturarlas, sino, peta.
+Se utiliza el método throws.
+
+Nosotros definimos nuestras propias exepciones.
 Y las no chequeadas, es recomendable intentar capturarlas para poder definir los errores y exepciones
 */

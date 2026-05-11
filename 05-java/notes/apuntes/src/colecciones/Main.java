@@ -69,4 +69,12 @@ Para recorrer arrays usamos .length()
 Para recorrer listas usamos .size()
 
 Para eliminar un elemento de un ArrayList con remove, necesitamos eliminar con referencia 
+
+Los ArrayList admiten duplicados y podemos acceder por índice. Es un búsqueda rápida.
+Si hacemos inserciones o eliminaciones del final es algo rápido, pero si es al principio o en medio, son operaciones lentas.
+La implementación se hace como con Array normales
+
+Las listas enlazadas (LinkedList), al contario que los ArrayList son de búsqueda muy rápida al usar índices
+Las inserciones y eliminaciones son rápidas a nivel intermedio o al final.
+No hay acceso directo al elemento y necesitamos recorrerlo para ir a un elemento determinado
 */
